@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SwiftStubRouter/SwiftStubRouter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Base/Base.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Login/Login.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftRouterDemo/SwiftRouterDemo.xcodeproj">
+   </FileRef>
+</Workspace>
