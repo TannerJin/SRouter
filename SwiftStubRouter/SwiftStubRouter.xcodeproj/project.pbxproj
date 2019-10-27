@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9370CBF23605AC30050876C /* StubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9370CBE23605AC30050876C /* StubRouter.swift */; };
+		A9370CBF23605AC30050876C /* SRouterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9370CBE23605AC30050876C /* SRouterStub.swift */; };
 		A9371FFD2360308400045DCD /* SwiftStubRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9371FF32360308300045DCD /* SwiftStubRouter.framework */; };
 		A93720022360308400045DCD /* SwiftStubRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93720012360308400045DCD /* SwiftStubRouterTests.swift */; };
 		A93720042360308400045DCD /* SwiftStubRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = A9371FF62360308300045DCD /* SwiftStubRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A93D929523620A3C0022981C /* SRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929323620A3B0022981C /* SRouter.swift */; };
 		A93D929623620A3C0022981C /* SRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929423620A3B0022981C /* SRouterManager.swift */; };
+		A98191E123659264004F373E /* SRouterLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98191E023659264004F373E /* SRouterLock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A9370CBE23605AC30050876C /* StubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRouter.swift; sourceTree = "<group>"; };
+		A9370CBE23605AC30050876C /* SRouterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterStub.swift; sourceTree = "<group>"; };
 		A9371FF32360308300045DCD /* SwiftStubRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftStubRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9371FF62360308300045DCD /* SwiftStubRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftStubRouter.h; sourceTree = "<group>"; };
 		A9371FF72360308300045DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		A93720032360308400045DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93D929323620A3B0022981C /* SRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouter.swift; sourceTree = "<group>"; };
 		A93D929423620A3B0022981C /* SRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterManager.swift; sourceTree = "<group>"; };
+		A98191E023659264004F373E /* SRouterLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A9370CAD236055880050876C /* Sources */ = {
+		A9370CAD236055880050876C /* SRouter */ = {
 			isa = PBXGroup;
 			children = (
 				A93D929323620A3B0022981C /* SRouter.swift */,
 				A93D929423620A3B0022981C /* SRouterManager.swift */,
-				A9370CBE23605AC30050876C /* StubRouter.swift */,
+				A9370CBE23605AC30050876C /* SRouterStub.swift */,
+				A98191E023659264004F373E /* SRouterLock.swift */,
 			);
-			path = Sources;
+			path = SRouter;
 			sourceTree = "<group>";
 		};
 		A9371FE92360308300045DCD = {
@@ -87,7 +90,7 @@
 		A9371FF52360308300045DCD /* SwiftStubRouter */ = {
 			isa = PBXGroup;
 			children = (
-				A9370CAD236055880050876C /* Sources */,
+				A9370CAD236055880050876C /* SRouter */,
 				A9371FF62360308300045DCD /* SwiftStubRouter.h */,
 				A9371FF72360308300045DCD /* Info.plist */,
 			);
@@ -214,8 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93D929523620A3C0022981C /* SRouter.swift in Sources */,
+				A98191E123659264004F373E /* SRouterLock.swift in Sources */,
 				A93D929623620A3C0022981C /* SRouterManager.swift in Sources */,
-				A9370CBF23605AC30050876C /* StubRouter.swift in Sources */,
+				A9370CBF23605AC30050876C /* SRouterStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

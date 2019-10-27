@@ -13,13 +13,16 @@ open class SRouterManager {
 
     private var cacheSymbols = [String: UnsafeRawPointer]()
     
-    private var lock = NSLock()
-    
-    public func routeTo(_ router: String) -> SRouter? {
+    private var lock = SRouterLock()
+}
+
+
+public extension SRouterManager {
+    func routeTo(_ router: String) -> SRouter? {
         return self.routeTo(router, sRouterType: SRouter.self)
     }
     
-    public func routeTo<T: SRouterProtocol>(_ router: String, sRouterType: T.Type) -> T? {
+    func routeTo<T: SRouterProtocol>(_ router: String, sRouterType: T.Type) -> T? {
         lock.lock()
         defer {
             lock.unlock()
