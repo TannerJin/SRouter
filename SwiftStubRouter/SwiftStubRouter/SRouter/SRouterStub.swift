@@ -9,7 +9,7 @@
 import Foundation
 import MachO
 
-public func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
+func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
     for i in 0..<_dyld_image_count() {
         if String(cString: _dyld_get_image_name(i)).components(separatedBy: "/").last == moduleName {
             return stubRouteToSymbol(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
@@ -31,16 +31,16 @@ private func stubRouteToSymbol(_ symbol: String,
     
     for _ in 0..<image.pointee.ncmds {
         if _cur_cmd.pointee.cmd == LC_SEGMENT_64 {
-            if UInt8(_cur_cmd.pointee.segname.0) == linkeditName[0],
-                UInt8(_cur_cmd.pointee.segname.1) == linkeditName[1],
-                UInt8(_cur_cmd.pointee.segname.2) == linkeditName[2],
-                UInt8(_cur_cmd.pointee.segname.3) == linkeditName[3],
-                UInt8(_cur_cmd.pointee.segname.4) == linkeditName[4],
-                UInt8(_cur_cmd.pointee.segname.5) == linkeditName[5],
-                UInt8(_cur_cmd.pointee.segname.6) == linkeditName[6],
-                UInt8(_cur_cmd.pointee.segname.7) == linkeditName[7],
-                UInt8(_cur_cmd.pointee.segname.8) == linkeditName[8],
-                UInt8(_cur_cmd.pointee.segname.9) == linkeditName[9]
+            if  _cur_cmd.pointee.segname.0 == linkeditName[0],
+                _cur_cmd.pointee.segname.1 == linkeditName[1],
+                _cur_cmd.pointee.segname.2 == linkeditName[2],
+                _cur_cmd.pointee.segname.3 == linkeditName[3],
+                _cur_cmd.pointee.segname.4 == linkeditName[4],
+                _cur_cmd.pointee.segname.5 == linkeditName[5],
+                _cur_cmd.pointee.segname.6 == linkeditName[6],
+                _cur_cmd.pointee.segname.7 == linkeditName[7],
+                _cur_cmd.pointee.segname.8 == linkeditName[8],
+                _cur_cmd.pointee.segname.9 == linkeditName[9]
             {
                 linkeditCmd = _cur_cmd
             }

@@ -8,21 +8,13 @@
 
 import Foundation
 
-public protocol SRouterProtocol {
-    associatedtype SRouterBlockType
-    
-    init(_ block: SRouterBlockType)
-}
-
 @dynamicCallable
-public struct SRouter: SRouterProtocol {
+public struct SRouter {
     public typealias SRouterBlock = @convention(thin) (_ input: [String: Any]) -> [String: Any]?
+        
+    internal var block: SRouterBlock
     
-    public typealias SRouterBlockType = SRouterBlock
-    
-    internal var block: SRouterBlockType
-    
-    public init(_ block: @escaping SRouterBlockType) {
+    public init(_ block: @escaping SRouterBlock) {
         self.block = block
     }
 
