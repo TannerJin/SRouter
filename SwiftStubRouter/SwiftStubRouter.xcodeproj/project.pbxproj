@@ -14,6 +14,8 @@
 		A93D929523620A3C0022981C /* SRouterDefaultBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929323620A3B0022981C /* SRouterDefaultBlock.swift */; };
 		A93D929623620A3C0022981C /* SRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929423620A3B0022981C /* SRouterManager.swift */; };
 		A98191E123659264004F373E /* SRouterLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98191E023659264004F373E /* SRouterLock.swift */; };
+		A9C522682366BD6C00466DEA /* SRouterLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C522672366BD6C00466DEA /* SRouterLog.swift */; };
+		A9C5226A2366C7F500466DEA /* SRouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C522692366C7F500466DEA /* SRouterHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		A93D929323620A3B0022981C /* SRouterDefaultBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterDefaultBlock.swift; sourceTree = "<group>"; };
 		A93D929423620A3B0022981C /* SRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterManager.swift; sourceTree = "<group>"; };
 		A98191E023659264004F373E /* SRouterLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterLock.swift; sourceTree = "<group>"; };
+		A9C522672366BD6C00466DEA /* SRouterLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterLog.swift; sourceTree = "<group>"; };
+		A9C522692366C7F500466DEA /* SRouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				A93D929323620A3B0022981C /* SRouterDefaultBlock.swift */,
 				A9370CBE23605AC30050876C /* SRouterStub.swift */,
 				A98191E023659264004F373E /* SRouterLock.swift */,
+				A9C522672366BD6C00466DEA /* SRouterLog.swift */,
+				A9C522692366C7F500466DEA /* SRouterHelper.swift */,
 			);
 			path = SRouter;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C5226A2366C7F500466DEA /* SRouterHelper.swift in Sources */,
 				A93D929523620A3C0022981C /* SRouterDefaultBlock.swift in Sources */,
 				A98191E123659264004F373E /* SRouterLock.swift in Sources */,
+				A9C522682366BD6C00466DEA /* SRouterLog.swift in Sources */,
 				A93D929623620A3C0022981C /* SRouterManager.swift in Sources */,
 				A9370CBF23605AC30050876C /* SRouterStub.swift in Sources */,
 			);

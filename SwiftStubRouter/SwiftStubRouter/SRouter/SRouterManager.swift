@@ -17,6 +17,16 @@ open class SRouterManager {
 }
 
 public extension SRouterManager {
+    static func openLog() {
+        SRouterLogOn = true
+    }
+    
+    static func closeLog() {
+        SRouterLogOn = false
+    }
+}
+
+public extension SRouterManager {
     func registerDefultNotFoundHandler(_ handler: @escaping (_ router: String)->()) {
         self.defaultNotFoundHandler = handler
     }
@@ -30,7 +40,12 @@ public extension SRouterManager {
     
     func routeTo<T>(_ router: String, routerBlockType: T.Type) -> T? {
         assert(MemoryLayout<T>.size == MemoryLayout<UnsafeRawPointer>.size, "T.Type is not @convention(thin) block")
-
+        
+        if !isFunction(routerBlockType) {
+            SRouterLog(router: router, message: "\(routerBlockType) Is Not BlockType")
+            return nil
+        }
+        
         lock.lock()
         defer {
             lock.unlock()

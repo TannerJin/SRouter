@@ -15,12 +15,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Log
+        SRouterManager.openLog()
+        
         // 404 test
         SRouterManager.default.registerDefultNotFoundHandler { router in
             print("\(router) Error: 404")
         }
         
-        SRouterManager.default.routeAndHandleNotFound("AnyMoudle://404-Test")
+        SRouterManager.default.routeAndHandleNotFound("Login://404-Test")
     }
 
     @IBAction func LoginClick(_ sender: UIButton) {

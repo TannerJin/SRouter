@@ -15,6 +15,7 @@ func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer
             return stubRouteToSymbol(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
         }
     }
+    SRouterLog(router: symbol, message: "\(moduleName) Module Not Found")
     return nil
 }
 
@@ -74,5 +75,6 @@ private func stubRouteToSymbol(_ symbol: String,
         }
     }
     
+    SRouterLog(router: symbol, message: "\(symbol) Not Found")
     return nil
 }

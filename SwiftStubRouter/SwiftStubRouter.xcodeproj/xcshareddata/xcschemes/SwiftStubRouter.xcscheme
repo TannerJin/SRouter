@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A93720152360309B00045DCD"
-               BuildableName = "SwiftRouterDemo.app"
-               BlueprintName = "SwiftRouterDemo"
-               ReferencedContainer = "container:SwiftRouterDemo.xcodeproj">
+               BlueprintIdentifier = "A9371FF22360308300045DCD"
+               BuildableName = "SwiftStubRouter.framework"
+               BlueprintName = "SwiftStubRouter"
+               ReferencedContainer = "container:SwiftStubRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A937202B2360309C00045DCD"
-               BuildableName = "SwiftRouterDemoTests.xctest"
-               BlueprintName = "SwiftRouterDemoTests"
-               ReferencedContainer = "container:SwiftRouterDemo.xcodeproj">
+               BlueprintIdentifier = "A9371FFB2360308400045DCD"
+               BuildableName = "SwiftStubRouterTests.xctest"
+               BlueprintName = "SwiftStubRouterTests"
+               ReferencedContainer = "container:SwiftStubRouter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -50,16 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A93720152360309B00045DCD"
-            BuildableName = "SwiftRouterDemo.app"
-            BlueprintName = "SwiftRouterDemo"
-            ReferencedContainer = "container:SwiftRouterDemo.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,16 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A93720152360309B00045DCD"
-            BuildableName = "SwiftRouterDemo.app"
-            BlueprintName = "SwiftRouterDemo"
-            ReferencedContainer = "container:SwiftRouterDemo.xcodeproj">
+            BlueprintIdentifier = "A9371FF22360308300045DCD"
+            BuildableName = "SwiftStubRouter.framework"
+            BlueprintName = "SwiftStubRouter"
+            ReferencedContainer = "container:SwiftStubRouter.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
