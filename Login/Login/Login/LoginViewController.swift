@@ -16,6 +16,5 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.title = _title
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
     }
 }

@@ -9,13 +9,16 @@
 import Foundation
 
 @dynamicCallable
-public struct SRouter {
+public struct SRouterDefaultBlock {
     public typealias SRouterBlock = @convention(thin) (_ input: [String: Any]) -> [String: Any]?
         
     internal var block: SRouterBlock
     
-    public init(_ block: @escaping SRouterBlock) {
-        self.block = block
+    public init?(_ block: SRouterBlock?) {
+        guard let _block = block else {
+            return nil
+        }
+        self.block = _block
     }
 
     @discardableResult

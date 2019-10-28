@@ -10,18 +10,17 @@ import Base
 import SwiftStubRouter
 import UIKit
 
-typealias DIYRouterBlock = @convention(thin) (_ input: String) -> UIViewController?
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 404 test
-        SRouterManager.default.registerDefultNotFoundHander {
-            print("SRouter Error: 404")
+        SRouterManager.default.registerDefultNotFoundHandler { router in
+            print("\(router) Error: 404")
         }
-        SRouterManager.default.routeTo("404-Test", sRouterType: DIYRouterBlock.self, notFoundHandle: nil)
+        
+        SRouterManager.default.routeAndHandleNotFound("AnyMoudle://404-Test")
     }
 
     @IBAction func LoginClick(_ sender: UIButton) {
@@ -30,7 +29,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func RegisterClick(_ sender: UIButton) {
-        if let registerController = SRouterManager.default.routeTo("Login://register", sRouterType: DIYRouterBlock.self)?("注册🚀🚀🚀") {
+        typealias RegisterRouterBlock = @convention(thin) (_ input: String) -> UIViewController
+
+        if let registerController = SRouterManager.default.routeTo("Login://register", routerBlockType: RegisterRouterBlock.self)?("注册🚀🚀🚀") {
              self.present(UINavigationController(rootViewController: registerController), animated: true, completion: nil)
         }
     }

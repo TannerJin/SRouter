@@ -13,28 +13,29 @@ open class SRouterManager {
 
     private var cacheSymbols = [String: UnsafeRawPointer]()
     private var lock = SRouterLock()
-    private var defaultNotFoundHandle: (()->())?
+    private var defaultNotFoundHandler: ((_ router: String)->())?
 }
 
 public extension SRouterManager {
-    func registerDefultNotFoundHander(_ handle: @escaping ()->()) {
-        self.defaultNotFoundHandle = handle
+    func registerDefultNotFoundHandler(_ handler: @escaping (_ router: String)->()) {
+        self.defaultNotFoundHandler = handler
     }
 }
 
 public extension SRouterManager {
-    func routeTo(_ router: String) -> SRouter? {
-        if let block = self.routeTo(router, sRouterType: SRouter.SRouterBlock.self) {
-            return SRouter(block)
-        }
-        return nil
+    func routeTo(_ router: String) -> SRouterDefaultBlock? {
+        let block = self.routeTo(router, routerBlockType: SRouterDefaultBlock.SRouterBlock.self)
+        return SRouterDefaultBlock(block)
     }
     
-    func routeTo<T>(_ router: String, sRouterType: T.Type) -> T? {
+    func routeTo<T>(_ router: String, routerBlockType: T.Type) -> T? {
+        assert(MemoryLayout<T>.size == MemoryLayout<UnsafeRawPointer>.size, "T.Type is not @convention(thin) block")
+
         lock.lock()
         defer {
             lock.unlock()
         }
+        
         if let symbol = cacheSymbols[router] {
             let routerBlock = unsafeBitCast(symbol, to: T.self)
             return routerBlock
@@ -45,18 +46,23 @@ public extension SRouterManager {
         
         cacheSymbols[router] = routerSymbol
         let routerBlock = unsafeBitCast(routerSymbol, to: T.self)
-        
         return routerBlock
     }
 }
 
 public extension SRouterManager {
     @discardableResult
-    func routeTo<T>(_ router: String, sRouterType: T.Type, notFoundHandle handle: (()->())?) -> T? {
-        if let router = routeTo(router, sRouterType: sRouterType) {
+    func routeAndHandleNotFound(_ router: String, notFoundHandle handler: (()->())? = nil) -> SRouterDefaultBlock? {
+        let routerBlock = routeAndHandleNotFound(router, routerBlockType: SRouterDefaultBlock.SRouterBlock.self, notFoundHandle: handler)
+        return SRouterDefaultBlock(routerBlock)
+    }
+    
+    @discardableResult
+    func routeAndHandleNotFound<T>(_ router: String, routerBlockType blockType: T.Type, notFoundHandle handler: (()->())? = nil) -> T? {
+        if let router = routeTo(router, routerBlockType: blockType) {
            return router
         }
-        handle == nil ? defaultNotFoundHandle?():handle?()
+        handler == nil ? defaultNotFoundHandler?(router):handler?()
         return nil
     }
 }

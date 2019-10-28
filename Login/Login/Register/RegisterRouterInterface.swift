@@ -8,7 +8,6 @@
 
 import UIKit
 
-// DIYRouter => DIYRouterBlock
 @_silgen_name("Login://register")
 public func RegisterRouterInterface(with params: String) -> UIViewController {
     let registerController = RegisterViewController()
