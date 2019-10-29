@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController {
     
     var _title: String?
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.title = _title
         self.view.backgroundColor = .white

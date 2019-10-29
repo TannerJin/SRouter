@@ -12,14 +12,28 @@ import MachO
 func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
     for i in 0..<_dyld_image_count() {
         if String(cString: _dyld_get_image_name(i)).components(separatedBy: "/").last == moduleName {
-            return stubRouteToSymbol(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
+            if let pointer = stubRouteToExportInfo(symbol, imageIndex: i) {
+                return pointer
+            }
+            return stubRouteToSymbolTable(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
         }
     }
     SRouterLog(router: symbol, message: "\(moduleName) Module Not Found")
     return nil
 }
 
-private func stubRouteToSymbol(_ symbol: String,
+// O(log(n))  tree
+private func stubRouteToExportInfo(_ symbol: String,
+                                   imageIndex: UInt32) -> UnsafeRawPointer? {
+    if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
+        return UnsafeRawPointer(pointer)
+    }
+    SRouterLog(router: symbol, message: "ExportInfo Not Found \(symbol)")
+    return nil
+}
+
+// O(n)  list
+private func stubRouteToSymbolTable(_ symbol: String,
                                image: UnsafePointer<mach_header>,
                                imageSlide slide: Int) -> UnsafeRawPointer? {
     
@@ -75,6 +89,6 @@ private func stubRouteToSymbol(_ symbol: String,
         }
     }
     
-    SRouterLog(router: symbol, message: "\(symbol) Not Found")
+    SRouterLog(router: symbol, message: "Symbol Table Not Found \(symbol)")
     return nil
 }

@@ -7,6 +7,7 @@
 //
 
 import Base
+import MachO
 import SwiftStubRouter
 import UIKit
 
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func LoginClick(_ sender: UIButton) {
         guard let naviController = self.navigationController else { return }
-        SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀")
+        SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀")        
     }
     
     @IBAction func RegisterClick(_ sender: UIButton) {

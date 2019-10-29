@@ -380,6 +380,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXPORTED_SYMBOLS_FILE = "";
 				INFOPLIST_FILE = Login/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -387,12 +388,15 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ORDER_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = jin.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SEPARATE_SYMBOL_EDIT = NO;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				UNEXPORTED_SYMBOLS_FILE = "";
 			};
 			name = Debug;
 		};
@@ -406,6 +410,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXPORTED_SYMBOLS_FILE = "";
 				INFOPLIST_FILE = Login/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -413,11 +418,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ORDER_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = jin.Login;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SEPARATE_SYMBOL_EDIT = NO;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				UNEXPORTED_SYMBOLS_FILE = "";
 			};
 			name = Release;
 		};
