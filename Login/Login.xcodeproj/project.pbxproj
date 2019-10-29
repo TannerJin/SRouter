@@ -224,8 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9370CCA236146CE0050876C /* RegisterViewController.swift in Sources */,
 				A9370CBA236057170050876C /* LoginRouterInterface.swift in Sources */,
+				A9370CCA236146CE0050876C /* RegisterViewController.swift in Sources */,
 				A9370CB8236056FF0050876C /* LoginViewController.swift in Sources */,
 				A9370CCD236147040050876C /* RegisterRouterInterface.swift in Sources */,
 			);
