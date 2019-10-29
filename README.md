@@ -29,5 +29,12 @@ Any Others Module
 
 ```swift
 // router to login of Login Module
-SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀")
+SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
+
+## Performace Optimization
+
+1. Put the files of 'RouterInterface' in forefront at configure of 'Complile Sources'; Like Shown Below   
+![](https://github.com/TannerJin/SRouter/blob/master/images/Performance%20optimization-1.png)   
+
+2. More Modules for the componentization
