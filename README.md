@@ -41,8 +41,8 @@ Any Module
 ```swift
 // router to UserInfoViewController of User Module
 if var controller = SRouterManager.default.unsafeRouteToController("User.UserInfoViewController") {
-            self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
-        }
+    self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
+}
 ```
 
 
