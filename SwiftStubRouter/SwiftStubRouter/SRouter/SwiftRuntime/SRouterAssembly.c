@@ -8,6 +8,9 @@
 
 #include "SRouterAssembly.h"
 
+//                  arm64  x86_64
+// self(register)    x20    r13
+
 __attribute__ ((noinline))
 void saveSelfRegister(int64_t * _self) {
     #if defined(__arm64__) || defined(__aarch64__)
