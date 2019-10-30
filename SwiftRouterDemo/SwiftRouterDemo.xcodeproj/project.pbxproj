@@ -20,6 +20,8 @@
 		A93720232360309C00045DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93720222360309C00045DCD /* Assets.xcassets */; };
 		A93720262360309C00045DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93720242360309C00045DCD /* LaunchScreen.storyboard */; };
 		A93720312360309C00045DCD /* SwiftRouterDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93720302360309C00045DCD /* SwiftRouterDemoTests.swift */; };
+		A939FEA22369CE73004DF950 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEA12369CE73004DF950 /* User.framework */; };
+		A939FEA32369CE73004DF950 /* User.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEA12369CE73004DF950 /* User.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A9370CC6236145090050876C /* Login.framework in Embed Frameworks */,
+				A939FEA32369CE73004DF950 /* User.framework in Embed Frameworks */,
 				A9370CB2236055AD0050876C /* Base.framework in Embed Frameworks */,
 				A9370CD423614D180050876C /* SwiftStubRouter.framework in Embed Frameworks */,
 			);
@@ -64,6 +67,7 @@
 		A937202C2360309C00045DCD /* SwiftRouterDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRouterDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93720302360309C00045DCD /* SwiftRouterDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRouterDemoTests.swift; sourceTree = "<group>"; };
 		A93720322360309C00045DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A939FEA12369CE73004DF950 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9370CC5236145090050876C /* Login.framework in Frameworks */,
+				A939FEA22369CE73004DF950 /* User.framework in Frameworks */,
 				A9370CB1236055AD0050876C /* Base.framework in Frameworks */,
 				A9370CD323614D180050876C /* SwiftStubRouter.framework in Frameworks */,
 			);
@@ -90,6 +95,7 @@
 		A9370CAE236055AD0050876C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A939FEA12369CE73004DF950 /* User.framework */,
 				A9370CC4236145090050876C /* Login.framework */,
 				A9370CBB23605A000050876C /* Login.framework */,
 				A9370CAF236055AD0050876C /* Base.framework */,

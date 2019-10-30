@@ -6,8 +6,6 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
-import Base
-import MachO
 import SwiftStubRouter
 import UIKit
 
@@ -37,6 +35,12 @@ class ViewController: UIViewController {
 
         if let registerController = SRouterManager.default.routeTo("Login://register", routerBlockType: RegisterRouterBlock.self)?("注册🚀🚀🚀") {
              self.present(UINavigationController(rootViewController: registerController), animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func UserInfoDidClick(_ sender: UIButton) {
+        if var controller = SRouterManager.default.unsafeRouteToController("User.UserInfoViewController") {
+            self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
         }
     }
 }

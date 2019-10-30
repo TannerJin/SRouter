@@ -16,10 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fag-Fd-c5s">
-                                <rect key="frame" x="177" y="427" width="60" height="36"/>
+                                <rect key="frame" x="186.5" y="397" width="41" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="QhM-bg-fmw"/>
-                                    <constraint firstAttribute="width" constant="60" id="zHi-aI-8oO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="登录"/>
@@ -28,22 +27,29 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-eG-BU9">
-                                <rect key="frame" x="177" y="487" width="60" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Pku-E7-pUz"/>
-                                </constraints>
+                                <rect key="frame" x="186.5" y="457" width="41" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="注册"/>
                                 <connections>
                                     <action selector="RegisterClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aa8-7I-99V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-Gb-fok">
+                                <rect key="frame" x="186.5" y="517" width="41" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="用户"/>
+                                <connections>
+                                    <action selector="UserInfoDidClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPz-b6-TFK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QWh-eG-BU9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="30" id="ANq-6Y-Pt8"/>
+                            <constraint firstItem="Il1-Gb-fok" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="60" id="6Tz-M5-FyZ"/>
+                            <constraint firstItem="QWh-eG-BU9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ANq-6Y-Pt8"/>
+                            <constraint firstItem="Il1-Gb-fok" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F5n-B7-AWp"/>
                             <constraint firstItem="Fag-Fd-c5s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NdL-AX-9Nk"/>
-                            <constraint firstItem="Fag-Fd-c5s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-30" id="aav-28-jw1"/>
+                            <constraint firstItem="Fag-Fd-c5s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-60" id="aav-28-jw1"/>
                             <constraint firstItem="QWh-eG-BU9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qXA-O9-Q4b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

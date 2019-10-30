@@ -11,12 +11,19 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var _title: String?
-
+    
+    init(title: String) {
+        super.init(nibName: nil, bundle: nil)
+        self._title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = _title
         self.view.backgroundColor = .green
-        // Do any additional setup after loading the view.
     }
-
 }

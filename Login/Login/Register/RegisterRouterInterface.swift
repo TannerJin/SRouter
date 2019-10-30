@@ -9,9 +9,7 @@
 import UIKit
 
 @_silgen_name("Login://register")
-public func RegisterRouterInterface(with params: String) -> UIViewController {
-    let registerController = RegisterViewController()
-    registerController._title = params
-    
+public func RegisterRouterInterface(with param: String) -> UIViewController {
+    let registerController = RegisterViewController(title: param)
     return registerController
 }

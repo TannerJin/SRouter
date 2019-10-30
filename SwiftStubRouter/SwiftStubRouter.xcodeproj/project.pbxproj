@@ -11,6 +11,11 @@
 		A9371FFD2360308400045DCD /* SwiftStubRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9371FF32360308300045DCD /* SwiftStubRouter.framework */; };
 		A93720022360308400045DCD /* SwiftStubRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93720012360308400045DCD /* SwiftStubRouterTests.swift */; };
 		A93720042360308400045DCD /* SwiftStubRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = A9371FF62360308300045DCD /* SwiftStubRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A939FE622369327C004DF950 /* SRouterManager+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939FE612369327C004DF950 /* SRouterManager+UIViewController.swift */; };
+		A939FE642369352B004DF950 /* SRouterStub+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939FE632369352B004DF950 /* SRouterStub+UIViewController.swift */; };
+		A939FE6623695950004DF950 /* SRouterUIViewControllerMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939FE6523695950004DF950 /* SRouterUIViewControllerMetadata.swift */; };
+		A939FE7B23699CD8004DF950 /* SRouterAssembly.h in Headers */ = {isa = PBXBuildFile; fileRef = A939FE7923699CD8004DF950 /* SRouterAssembly.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A939FE7C23699CD8004DF950 /* SRouterAssembly.c in Sources */ = {isa = PBXBuildFile; fileRef = A939FE7A23699CD8004DF950 /* SRouterAssembly.c */; };
 		A93D929523620A3C0022981C /* SRouterDefaultBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929323620A3B0022981C /* SRouterDefaultBlock.swift */; };
 		A93D929623620A3C0022981C /* SRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D929423620A3B0022981C /* SRouterManager.swift */; };
 		A98191E123659264004F373E /* SRouterLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98191E023659264004F373E /* SRouterLock.swift */; };
@@ -36,6 +41,11 @@
 		A9371FFC2360308400045DCD /* SwiftStubRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftStubRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93720012360308400045DCD /* SwiftStubRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStubRouterTests.swift; sourceTree = "<group>"; };
 		A93720032360308400045DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A939FE612369327C004DF950 /* SRouterManager+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterManager+UIViewController.swift"; sourceTree = "<group>"; };
+		A939FE632369352B004DF950 /* SRouterStub+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterStub+UIViewController.swift"; sourceTree = "<group>"; };
+		A939FE6523695950004DF950 /* SRouterUIViewControllerMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterUIViewControllerMetadata.swift; sourceTree = "<group>"; };
+		A939FE7923699CD8004DF950 /* SRouterAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRouterAssembly.h; sourceTree = "<group>"; };
+		A939FE7A23699CD8004DF950 /* SRouterAssembly.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SRouterAssembly.c; sourceTree = "<group>"; };
 		A93D929323620A3B0022981C /* SRouterDefaultBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterDefaultBlock.swift; sourceTree = "<group>"; };
 		A93D929423620A3B0022981C /* SRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterManager.swift; sourceTree = "<group>"; };
 		A98191E023659264004F373E /* SRouterLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRouterLock.swift; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 				A98191E023659264004F373E /* SRouterLock.swift */,
 				A9C522672366BD6C00466DEA /* SRouterLog.swift */,
 				A9C522692366C7F500466DEA /* SRouterHelper.swift */,
+				A939FE6023693245004DF950 /* SwiftRuntime */,
 			);
 			path = SRouter;
 			sourceTree = "<group>";
@@ -112,6 +123,18 @@
 			path = SwiftStubRouterTests;
 			sourceTree = "<group>";
 		};
+		A939FE6023693245004DF950 /* SwiftRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				A939FE612369327C004DF950 /* SRouterManager+UIViewController.swift */,
+				A939FE632369352B004DF950 /* SRouterStub+UIViewController.swift */,
+				A939FE6523695950004DF950 /* SRouterUIViewControllerMetadata.swift */,
+				A939FE7A23699CD8004DF950 /* SRouterAssembly.c */,
+				A939FE7923699CD8004DF950 /* SRouterAssembly.h */,
+			);
+			path = SwiftRuntime;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -119,6 +142,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A939FE7B23699CD8004DF950 /* SRouterAssembly.h in Headers */,
 				A93720042360308400045DCD /* SwiftStubRouter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +249,10 @@
 				A9C5226A2366C7F500466DEA /* SRouterHelper.swift in Sources */,
 				A93D929523620A3C0022981C /* SRouterDefaultBlock.swift in Sources */,
 				A98191E123659264004F373E /* SRouterLock.swift in Sources */,
+				A939FE6623695950004DF950 /* SRouterUIViewControllerMetadata.swift in Sources */,
+				A939FE7C23699CD8004DF950 /* SRouterAssembly.c in Sources */,
+				A939FE642369352B004DF950 /* SRouterStub+UIViewController.swift in Sources */,
+				A939FE622369327C004DF950 /* SRouterManager+UIViewController.swift in Sources */,
 				A9C522682366BD6C00466DEA /* SRouterLog.swift in Sources */,
 				A93D929623620A3C0022981C /* SRouterManager.swift in Sources */,
 				A9370CBF23605AC30050876C /* SRouterStub.swift in Sources */,
@@ -301,13 +329,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -358,12 +387,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -391,6 +421,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jin.SwiftStubRouter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,6 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jin.SwiftStubRouter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,7 +503,7 @@
 				A93720062360308400045DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A93720072360308400045DCD /* Build configuration list for PBXNativeTarget "SwiftStubRouter" */ = {
 			isa = XCConfigurationList;
@@ -480,7 +512,7 @@
 				A93720092360308400045DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A937200A2360308400045DCD /* Build configuration list for PBXNativeTarget "SwiftStubRouterTests" */ = {
 			isa = XCConfigurationList;
@@ -489,7 +521,7 @@
 				A937200C2360308400045DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
