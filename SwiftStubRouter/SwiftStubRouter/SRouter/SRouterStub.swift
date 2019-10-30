@@ -22,7 +22,7 @@ func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer
     return nil
 }
 
-// O(log(n))  tree
+// O(log(n)) B Tree
 private func stubRouteToExportInfo(_ symbol: String,
                                    imageIndex: UInt32) -> UnsafeRawPointer? {
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
