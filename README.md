@@ -6,6 +6,8 @@ SwiftRouter, StubRouter, SymbolRouter, whatever just call SRouter
 
 ## Usage
 
+### Route To Function
+
 Login Module
 ```swift
 // define login router
@@ -31,6 +33,18 @@ Any Others Module
 // router to login of Login Module
 SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
+
+### Route To UIViewController
+
+Any Module
+
+```swift
+// router to UserInfoViewController of User Module
+if var controller = SRouterManager.default.unsafeRouteToController("User.UserInfoViewController") {
+            self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
+        }
+```
+
 
 ## Performace Optimization
 
