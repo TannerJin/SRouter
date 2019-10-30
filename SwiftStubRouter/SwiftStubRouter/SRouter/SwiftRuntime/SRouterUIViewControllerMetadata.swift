@@ -27,10 +27,10 @@ public struct SRouterViewController<T> {
 
 // UIViewController()
 //      |(SIL)
-//      V
+//      V self -> UIViewController.Type
 // @convention(method) (UIViewController.Type) -> UIViewController
 //      |(Symbol)
-//      V
+//      V 
 // __C.UIViewController.__allocating_init() -> __C.UIViewController
 
 public typealias DefaultInitMethod = @convention(thin) () -> UIViewController
@@ -51,7 +51,7 @@ public extension SRouterViewController where T == DefaultInitMethod {
 
 // UIViewController(nibName: <#T##String?#>, bundle: <#T##Bundle?#>)
 //      |(SIL)
-//      V
+//      V self -> UIViewController.Type
 // @convention(method) (String?, Bundle?, UIViewController.Type) -> UIViewController
 //      |(Symbol)
 //      V
