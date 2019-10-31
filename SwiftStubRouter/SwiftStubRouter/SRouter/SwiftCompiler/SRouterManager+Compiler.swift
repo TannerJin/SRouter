@@ -1,15 +1,18 @@
 //
-//  SRouterManager+UIViewController.swift
+//  SRouterManager+Compiler.swift
 //  SwiftStubRouter
 //
-//  Created by jintao on 2019/10/30.
+//  Created by jintao on 2019/10/31.
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
 import UIKit
 
+// MARK: Swift Compiler (⚠️ Not Release ⚠️)
+// Target of Swift Compiler => Optimization Level != Optimize For Speed (noInlined)
+
 public extension SRouterManager {
-    
+        
     func unsafeRouteToController(_ controller: String) -> SRouterViewController<DefaultInitMethod>? {
         // hard code depend on compiler
         return routeToController(controller, controllerInitMethod: DefaultInitMethod.self, symbol: "__C.UIViewController.__allocating_init() -> __C.UIViewController")

@@ -6,6 +6,7 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
+import Base
 import SwiftStubRouter
 import UIKit
 
@@ -32,14 +33,23 @@ class ViewController: UIViewController {
     
     @IBAction func RegisterClick(_ sender: UIButton) {
         typealias RegisterRouterBlock = @convention(thin) (_ input: String) -> UIViewController
+        
         if let registerController = SRouterManager.default.routeTo("Login://register", routerBlockType: RegisterRouterBlock.self)?("注册🚀🚀🚀") {
              self.present(UINavigationController(rootViewController: registerController), animated: true, completion: nil)
         }
     }
     
     @IBAction func UserInfoDidClick(_ sender: UIButton) {
-        if var controller = SRouterManager.default.unsafeRouteToController("User.OtherViewController") {  // or User.UserInfoViewController
-            self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
+        if let controller = SRouterManager.initController("User.OtherViewController") {
+            self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         }
+        
+//        if let controller2 = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
+//            self.present(UINavigationController(rootViewController: controller2), animated: true, completion: nil)
+//        }
+        
+//        if var controller3 = SRouterManager.default.unsafeRouteToController("User.OtherViewController") {  // or User.UserInfoViewController
+//            self.present(UINavigationController(rootViewController: controller3.`init`()), animated: true, completion: nil)
+//        }
     }
 }

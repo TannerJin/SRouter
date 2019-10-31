@@ -17,5 +17,4 @@ class OtherViewController: UIViewController {
         self.title = "Other 🚀🚀🚀"
         self.view.backgroundColor = .yellow
     }
-    
 }

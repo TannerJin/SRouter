@@ -6,13 +6,14 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
+import Base
 import UIKit
 
 class RegisterViewController: UIViewController {
     
     var _title: String?
     
-    init(title: String) {
+    init(title: String, model: BaseModel) {
         super.init(nibName: nil, bundle: nil)
         self._title = title
     }
