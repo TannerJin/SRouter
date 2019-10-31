@@ -36,7 +36,10 @@ SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "�
 
 ### Route To UIViewController
 
-#### Runtime
+
+1. init()
+
+Any Modules
 
 ```swift
 // router to OtherViewController of User Module
@@ -45,21 +48,45 @@ if let controller = SRouterManager.initController("User.OtherViewController") {
 }
 ```
 
-#### Compiler(Not Release)
+2. init(nibName:bundle:)
 
-Any Module
+Any Modules
 
 ```swift
-// router to UserInfoViewController of User Module
-if var controller = SRouterManager.default.unsafeRouteToController("User.UserInfoViewController") {
-    self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
+// router to OtherViewController of User Module
+if let controller = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
+    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 }
 ```
 
+3. init(_ param1: Int, param2: String, ...)
 
-## Performace Optimization
+User Module
 
-1. Put the files of 'RouterInterface' in forefront at configure of 'Complile Sources'; Like Shown Below   
-![](https://github.com/TannerJin/SRouter/blob/master/images/Performance%20optimization-1.png)   
+```swift
+class OtherViewController: UIViewController {
+    
+    var _title: String?
+    
+    // @inline(never) must add
+    @inline(never) init(_: String) {
+        super.init(nibName: nil, bundle: nil)
+        self._title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+```
 
-2. More Modules for the componentization
+Any Others Modules
+
+```swift
+typealias OtherViewControllerInitMethod = @convention(thin) (String) -> UIViewController
+
+if let controller =  SRouterManager.unsafeInitController("User.OtherViewController", initMethodType: OtherViewControllerInitMethod.self)(_: String.self)?("Other🚀🚀🚀") {
+
+    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+}
+```
