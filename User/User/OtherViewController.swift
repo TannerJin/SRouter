@@ -6,10 +6,22 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
+import Base
 import UIKit
 
 class OtherViewController: UIViewController {
-
+    
+    var _title: String?
+    
+    @inline(never) init(_: String) {
+        super.init(nibName: nil, bundle: nil)
+        self._title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

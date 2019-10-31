@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     
     var _title: String?
     
-    init(title: String, model: BaseModel) {
+    init(title: String) {
         super.init(nibName: nil, bundle: nil)
         self._title = title
     }

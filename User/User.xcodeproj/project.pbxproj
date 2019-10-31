@@ -12,6 +12,8 @@
 		A939FE982369CE36004DF950 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = A939FE8A2369CE36004DF950 /* User.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A939FEA52369CE87004DF950 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939FEA42369CE87004DF950 /* UserInfoViewController.swift */; };
 		A939FEA9236A7FDD004DF950 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939FEA8236A7FDD004DF950 /* OtherViewController.swift */; };
+		A939FEBA236ADE42004DF950 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEB9236ADE42004DF950 /* Base.framework */; };
+		A939FEBB236ADE42004DF950 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEB9236ADE42004DF950 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +26,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A939FEBC236ADE42004DF950 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A939FEBB236ADE42004DF950 /* Base.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A939FE872369CE36004DF950 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A939FE8A2369CE36004DF950 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -33,6 +49,7 @@
 		A939FE972369CE36004DF950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A939FEA42369CE87004DF950 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		A939FEA8236A7FDD004DF950 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		A939FEB9236ADE42004DF950 /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A939FEBA236ADE42004DF950 /* Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +78,7 @@
 				A939FE892369CE36004DF950 /* User */,
 				A939FE942369CE36004DF950 /* UserTests */,
 				A939FE882369CE36004DF950 /* Products */,
+				A939FEB8236ADE42004DF950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +111,14 @@
 			path = UserTests;
 			sourceTree = "<group>";
 		};
+		A939FEB8236ADE42004DF950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A939FEB9236ADE42004DF950 /* Base.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -114,6 +141,7 @@
 				A939FE832369CE36004DF950 /* Sources */,
 				A939FE842369CE36004DF950 /* Frameworks */,
 				A939FE852369CE36004DF950 /* Resources */,
+				A939FEBC236ADE42004DF950 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

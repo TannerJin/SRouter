@@ -9,13 +9,15 @@
 import Foundation
 import MachO
 
-func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
+func SRouteLookupSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
     for i in 0..<_dyld_image_count() {
         if String(cString: _dyld_get_image_name(i)).components(separatedBy: "/").last == moduleName {
-            if let pointer = stubRouteToExportInfo(symbol, imageIndex: i) {
+            if let pointer = SRouteLookupSymbolAtExportInfo(symbol, imageIndex: i) {
                 return pointer
             }
-            return stubRouteToSymbolTable(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
+            return SRouteLookupSymbol(image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i), compare: {
+                return $0 == "_"+symbol
+            })
         }
     }
     SRouterLog(router: symbol, message: "\(moduleName) Module Not Found")
@@ -23,7 +25,7 @@ func stubRouteToModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer
 }
 
 // O(log(n)) B Tree
-private func stubRouteToExportInfo(_ symbol: String,
+private func SRouteLookupSymbolAtExportInfo(_ symbol: String,
                                    imageIndex: UInt32) -> UnsafeRawPointer? {
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
         return UnsafeRawPointer(pointer)
@@ -33,9 +35,9 @@ private func stubRouteToExportInfo(_ symbol: String,
 }
 
 // O(n)  list
-private func stubRouteToSymbolTable(_ symbol: String,
-                               image: UnsafePointer<mach_header>,
-                               imageSlide slide: Int) -> UnsafeRawPointer? {
+func SRouteLookupSymbol(image: UnsafePointer<mach_header>,
+                               imageSlide slide: Int,
+                               compare: (String)->Bool) -> UnsafeRawPointer? {
     
     let linkeditName = SEG_LINKEDIT.data(using: String.Encoding.utf8)!.map({ $0 })
     var linkeditCmd: UnsafeMutablePointer<segment_command_64>!
@@ -82,13 +84,13 @@ private func stubRouteToSymbolTable(_ symbol: String,
         let curSymbolStrOff = curSymbol.pointee.n_un.n_strx
         
         let curSymbolStr = strtab.advanced(by: Int(curSymbolStrOff))
-        let _curSymbolStr = String(cString: curSymbolStr.advanced(by: 1))  // _symbol
+        let _curSymbolStr = String(cString: curSymbolStr)  // _symbol
         
-        if _curSymbolStr == symbol {
+        if compare(_curSymbolStr) {
             return UnsafeRawPointer(bitPattern: slide + Int(curSymbol.pointee.n_value))
         }
     }
     
-    SRouterLog(router: symbol, message: "Symbol Table Not Found \(symbol)")
+//    SRouterLog(router: symbol, message: "Symbol Table Not Found \(symbol)")
     return nil
 }
