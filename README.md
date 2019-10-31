@@ -36,6 +36,17 @@ SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "ç
 
 ### Route To UIViewController
 
+#### Runtime
+
+```swift
+// router to OtherViewController of User Module
+if let controller = SRouterManager.initController("User.OtherViewController") {
+    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+}
+```
+
+#### Compiler(Not Release)
+
 Any Module
 
 ```swift
