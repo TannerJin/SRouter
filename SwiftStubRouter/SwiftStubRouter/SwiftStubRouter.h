@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double SwiftStubRouterVersionNumber;
 FOUNDATION_EXPORT const unsigned char SwiftStubRouterVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftStubRouter/PublicHeader.h>
-
-#import <SwiftStubRouter/SRouterAssembly.h>
