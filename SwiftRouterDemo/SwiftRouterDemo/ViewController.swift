@@ -32,14 +32,13 @@ class ViewController: UIViewController {
     
     @IBAction func RegisterClick(_ sender: UIButton) {
         typealias RegisterRouterBlock = @convention(thin) (_ input: String) -> UIViewController
-
         if let registerController = SRouterManager.default.routeTo("Login://register", routerBlockType: RegisterRouterBlock.self)?("注册🚀🚀🚀") {
              self.present(UINavigationController(rootViewController: registerController), animated: true, completion: nil)
         }
     }
     
     @IBAction func UserInfoDidClick(_ sender: UIButton) {
-        if var controller = SRouterManager.default.unsafeRouteToController("User.UserInfoViewController") {
+        if var controller = SRouterManager.default.unsafeRouteToController("User.OtherViewController") {  // or User.UserInfoViewController
             self.present(UINavigationController(rootViewController: controller.`init`()), animated: true, completion: nil)
         }
     }

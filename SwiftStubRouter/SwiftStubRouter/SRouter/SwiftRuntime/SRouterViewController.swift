@@ -13,15 +13,14 @@ import UIKit
 // self(register)    x20    r13
 
 
-public struct SRouterViewController<T> {
-    typealias T = DefaultInitMethod
-       
+public struct SRouterViewController<T> {       
     internal var controllerType: UIViewController.Type
    
     internal var initFunction: T
    
     internal var selfRegister: Int64 = 0
 }
+
 
 // MARK: Init
 
@@ -47,7 +46,8 @@ public extension SRouterViewController where T == DefaultInitMethod {
     }
 }
 
-// MARK: Init Nib
+
+// MARK: Nib Init
 
 // UIViewController(nibName: <#T##String?#>, bundle: <#T##Bundle?#>)
 //      |(SIL)
