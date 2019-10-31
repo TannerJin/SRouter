@@ -44,15 +44,8 @@ class ViewController: UIViewController {
 //            self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 //        }
         
-//        if let controller2 = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
-//            self.present(UINavigationController(rootViewController: controller2), animated: true, completion: nil)
-//        }
-        
-        typealias OtherViewControllerInitMethod = @convention(thin) (String) -> UIViewController
-
-        if let controller3 =  SRouterManager.unsafeInitController("User.OtherViewController", initMethodType: OtherViewControllerInitMethod.self)(_: String.self)?("Other🚀🚀🚀") {
-
-            self.present(UINavigationController(rootViewController: controller3), animated: true, completion: nil)
+        if let controller2 = SRouterManager.initNibController("User.OtherViewController", nibName: nil, bundle: nil) {
+            self.present(UINavigationController(rootViewController: controller2), animated: true, completion: nil)
         }
     }
     

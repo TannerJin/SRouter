@@ -47,8 +47,4 @@ public extension SRouterManager {
         }
         return nil
     }
-    
-    static func unsafeInitController<T>(_ controller: String, initMethodType methodType: T.Type) -> SRouterViewControllerMetadata<T> {
-        return SRouterViewControllerMetadata(controller)
-    }
 }

@@ -58,35 +58,3 @@ if let controller = SRouterManager.initNibController("User.UserInfoViewControlle
     self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 }
 ```
-
-3. init(_ param1: Int, param2: String, ...)
-
-User Module
-
-```swift
-class OtherViewController: UIViewController {
-    
-    var _title: String?
-    
-    // @inline(never) must add
-    @inline(never) init(_: String) {
-        super.init(nibName: nil, bundle: nil)
-        self._title = title
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-```
-
-Any Others Modules
-
-```swift
-typealias OtherViewControllerInitMethod = @convention(thin) (String) -> UIViewController
-
-if let controller =  SRouterManager.unsafeInitController("User.OtherViewController", initMethodType: OtherViewControllerInitMethod.self)(_: String.self)?("Other🚀🚀🚀") {
-
-    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
-}
-```
