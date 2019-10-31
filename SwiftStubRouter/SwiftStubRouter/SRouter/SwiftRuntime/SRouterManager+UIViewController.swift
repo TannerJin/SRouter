@@ -11,10 +11,12 @@ import UIKit
 public extension SRouterManager {
     
     func unsafeRouteToController(_ controller: String) -> SRouterViewController<DefaultInitMethod>? {
+        // hard code depend on compiler
         return routeToController(controller, controllerInitMethod: DefaultInitMethod.self, symbol: "__C.UIViewController.__allocating_init() -> __C.UIViewController")
     }
     
     func unsafeRouteToNibController(_ controller: String) -> SRouterViewController<NibInitMethod>? {
+        // hard code depend on compiler
         return routeToController(controller, controllerInitMethod: NibInitMethod.self, symbol: "\(controller).__allocating_init(nibName: Swift.Optional<Swift.String>, bundle: Swift.Optional<__C.NSBundle>) -> \(controller)")
     }
     

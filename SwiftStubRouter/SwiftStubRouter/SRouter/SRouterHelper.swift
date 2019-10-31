@@ -9,8 +9,8 @@
 import Foundation
 
 // Swift Type Metadata https://github.com/apple/swift/blob/master/docs/ABI/TypeMetadata.rst#nominal-type-descriptor
-func isFunction<T>(_ type: T.Type) -> Bool {
-    assert(MemoryLayout<T>.size == MemoryLayout<UnsafeMutablePointer<Int>>.size)
+func isFunction(_ type: Any.Type) -> Bool {
+    assert(MemoryLayout.size(ofValue: type) == MemoryLayout<UnsafeMutablePointer<Int>>.size)
     
     let typePointer = unsafeBitCast(type, to: UnsafeMutablePointer<Int>.self)
     return typePointer.pointee == (2 | 0x100 | 0x200)
