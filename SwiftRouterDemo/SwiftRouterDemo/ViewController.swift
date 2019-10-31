@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func UserInfoDidClick(_ sender: UIButton) {
-//        if let controller = SRouterManager.initController("User.OtherViewController") {
+//        if let controller = SRouterManager.initController("User.UserInfoViewController") {
 //            self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 //        }
         
