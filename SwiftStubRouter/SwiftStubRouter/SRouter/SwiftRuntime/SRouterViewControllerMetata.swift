@@ -75,7 +75,7 @@ public class SRouterViewControllerMetadata<T> {
             } else {
                 let keyAndType = param.components(separatedBy: ":") // key: Swift.String
                 if let key = keyAndType.first, let type = keyAndType.last?.components(separatedBy: ".").last {
-                    params.append((key == "_" ? "":key, type)) // TODO: Swift.Optinal<Swift.Dictionary<Swift.String, Any>>
+                    params.append((key == "_" ? "":key, type)) // TODO: Swift.Optinal<Swift.Dictionary<Swift.String, Any>> ???
                 } else {
                     return false
                 }
