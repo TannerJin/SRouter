@@ -6,7 +6,7 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
-import SwiftStubRouter
+import SRouter
 import UIKit
 
 class ViewController: UIViewController {
@@ -31,9 +31,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func RegisterClick(_ sender: UIButton) {
-        typealias RegisteredRouterBlock = @convention(thin) (_ input: String) -> UIViewController
+        typealias RegisteredRouterSILFunctionType = @convention(thin) (_ input: String) -> UIViewController
         
-        if let registeredController = SRouterManager.default.routeTo("Login://registered", routerBlockType: RegisteredRouterBlock.self)?("注册 🚀🚀🚀") {
+        if let registeredController = SRouterManager.default.routeTo("Login://registered", routerSILFunctionType: RegisteredRouterSILFunctionType.self)?("注册 🚀🚀🚀") {
              self.present(UINavigationController(rootViewController: registeredController), animated: true, completion: nil)
         }
     }

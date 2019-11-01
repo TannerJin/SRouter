@@ -8,23 +8,25 @@
 
 import Foundation
 
+// https://github.com/apple/swift/blob/master/docs/SIL.rst#function-types
+
 @dynamicCallable
-public struct SRouterDefaultBlock {
-    public typealias SRouterBlock = @convention(thin) (_ input: [String: Any]) -> [String: Any]?
+public struct SRouterDefaultSILFunction {
+    public typealias SRouterSILFunction = @convention(thin) (_ input: [String: Any]) -> [String: Any]?
         
-    internal var block: SRouterBlock
+    internal var function: SRouterSILFunction
     
-    public init?(_ block: SRouterBlock?) {
-        guard let _block = block else {
+    public init?(_ function: SRouterSILFunction?) {
+        guard let _function = function else {
             return nil
         }
-        self.block = _block
+        self.function = _function
     }
 
     @discardableResult
     public func dynamicallyCall(withKeywordArguments args: KeyValuePairs<String, Any>) -> [String: Any]? {
         var params = [String: Any]()
         args.forEach({ params[$0.key] = $0.value })
-        return block(params)
+        return function(params)
     }
 }

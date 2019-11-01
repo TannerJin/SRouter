@@ -1,15 +1,15 @@
 //
-//  SwiftStubRouterTests.swift
-//  SwiftStubRouterTests
+//  SRouterTests.swift
+//  SRouterTests
 //
-//  Created by jintao on 2019/10/23.
+//  Created by jintao on 2019/11/1.
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
 import XCTest
-@testable import SwiftStubRouter
+@testable import SRouter
 
-class SwiftStubRouterTests: XCTestCase {
+class SRouterTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

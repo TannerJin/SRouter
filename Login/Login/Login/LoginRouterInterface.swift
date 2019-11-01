@@ -8,7 +8,7 @@
 
 import UIKit
 
-// SRouter => SRouterBlock
+// SRouterSILFunction
 @_silgen_name("Login://login")
 public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
     guard let navi = params["navi"] as? UINavigationController else {
