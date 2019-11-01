@@ -1,5 +1,5 @@
 //
-//  RegisterRouterInterface.swift
+//  RegisteredRouterInterface.swift
 //  Login
 //
 //  Created by jintao on 2019/10/24.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-@_silgen_name("Login://register")
-public func RegisterRouterInterface(with param: String) -> UIViewController {
-    let registerController = RegisterViewController(title: "Register 🚀🚀🚀")
-    return registerController
+@_silgen_name("Login://registered")
+public func RegisteredRouterInterface(with param: String) -> UIViewController {
+    let registeredController = RegisteredViewController(title: "Registered 🚀🚀🚀")
+    return registeredController
 }

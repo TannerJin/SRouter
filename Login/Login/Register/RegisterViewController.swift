@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  RegisteredViewController.swift
 //  Login
 //
 //  Created by jintao on 2019/10/24.
@@ -9,7 +9,7 @@
 import Base
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisteredViewController: UIViewController {
     
     var _title: String?
     

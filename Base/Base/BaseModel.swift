@@ -9,7 +9,5 @@
 import Foundation
 
 public struct BaseModel {
-    var id = 666
-    
-    public init() {}
+    var id = 666    
 }

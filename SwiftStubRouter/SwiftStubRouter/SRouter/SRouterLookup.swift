@@ -15,9 +15,7 @@ func SRouteLookupSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeR
             if let pointer = SRouteLookupSymbolAtExportInfo(symbol, imageIndex: i) {
                 return pointer
             }
-            return SRouteLookupSymbol(image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i), compare: {
-                return $0 == "_"+symbol
-            })
+            return SRouteLookupSymbolAtSymbolTable(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
         }
     }
     SRouterLog(router: symbol, message: "\(moduleName) Module Not Found")
@@ -25,8 +23,7 @@ func SRouteLookupSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeR
 }
 
 // O(log(n)) B Tree
-private func SRouteLookupSymbolAtExportInfo(_ symbol: String,
-                                   imageIndex: UInt32) -> UnsafeRawPointer? {
+private func SRouteLookupSymbolAtExportInfo(_ symbol: String, imageIndex: UInt32) -> UnsafeRawPointer? {
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
         return UnsafeRawPointer(pointer)
     }
@@ -35,10 +32,7 @@ private func SRouteLookupSymbolAtExportInfo(_ symbol: String,
 }
 
 // O(n)  list
-func SRouteLookupSymbol(image: UnsafePointer<mach_header>,
-                               imageSlide slide: Int,
-                               compare: (String)->Bool) -> UnsafeRawPointer? {
-    
+func SRouteLookupSymbolAtSymbolTable(_ symbol: String, image: UnsafePointer<mach_header>, imageSlide slide: Int) -> UnsafeRawPointer? {
     let linkeditName = SEG_LINKEDIT.data(using: String.Encoding.utf8)!.map({ $0 })
     var linkeditCmd: UnsafeMutablePointer<segment_command_64>!
     var symtabCmd: UnsafeMutablePointer<symtab_command>!
@@ -84,13 +78,13 @@ func SRouteLookupSymbol(image: UnsafePointer<mach_header>,
         let curSymbolStrOff = curSymbol.pointee.n_un.n_strx
         
         let curSymbolStr = strtab.advanced(by: Int(curSymbolStrOff))
-        let _curSymbolStr = String(cString: curSymbolStr)  // _symbol
+        let _curSymbolStr = String(cString: curSymbolStr.advanced(by: 1))  // _symbol
         
-        if compare(_curSymbolStr) {
+        if _curSymbolStr == symbol {
             return UnsafeRawPointer(bitPattern: slide + Int(curSymbol.pointee.n_value))
         }
     }
     
-//    SRouterLog(router: symbol, message: "Symbol Table Not Found \(symbol)")
+    SRouterLog(router: symbol, message: "Symbol Table Not Found \(symbol)")
     return nil
 }

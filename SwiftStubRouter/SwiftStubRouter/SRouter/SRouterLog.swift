@@ -12,10 +12,18 @@ public var SRouterLogOn = false
 
 @inlinable
 func SRouterLog(router: String, message: String) {
-    #if DEBUG
     if SRouterLogOn {
         let logMsg = "[** SRouter **] route to '\(router)' error =>: " + message
         print(logMsg, "\n")
     }
-    #endif
+}
+
+public extension SRouterManager {
+    static func openLog() {
+        SRouterLogOn = true
+    }
+    
+    static func closeLog() {
+        SRouterLogOn = false
+    }
 }

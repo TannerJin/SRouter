@@ -11,23 +11,13 @@ import Foundation
 open class SRouterManager {
     public static let `default` = SRouterManager()
 
-    private var cacheSymbols = [String: UnsafeRawPointer]()
     private var lock = SRouterLock()
+    private var cacheSymbols = [String: UnsafeRawPointer]()
     private var defaultNotFoundHandler: ((_ router: String)->())?
 }
 
 public extension SRouterManager {
-    static func openLog() {
-        SRouterLogOn = true
-    }
-    
-    static func closeLog() {
-        SRouterLogOn = false
-    }
-}
-
-public extension SRouterManager {
-    func registerDefultNotFoundHandler(_ handler: @escaping (_ router: String)->()) {
+    func registeredDefultNotFoundHandler(_ handler: @escaping (_ router: String)->()) {
         self.defaultNotFoundHandler = handler
     }
 }
