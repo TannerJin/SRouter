@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: Swift Runtime
+
 // Swift Type Metadata https://github.com/apple/swift/blob/master/docs/ABI/TypeMetadata.rst#nominal-type-descriptor
 func isFunction(_ type: Any.Type) -> Bool {
     assert(MemoryLayout.size(ofValue: type) == MemoryLayout<UnsafeMutablePointer<Int>>.size)
