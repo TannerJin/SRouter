@@ -1,5 +1,5 @@
 # SRouter
-An iOS(Swift) Router Design to solve module reference and don't need register router
+An iOS(Swift) Router to resolve references between modules and don't need registered router
 
 SwiftRouter, StubRouter, SymbolRouter, whatever just call SRouter
 
@@ -36,6 +36,9 @@ SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "ç
 
 ### Route To UIViewController
 
+Please make sure your ViewController hasn't yourself init method    
+
+Otherwise, you can use **[Route To Function](#route-to-function)** to init ViewController
 
 1. init()
 
@@ -61,11 +64,11 @@ if let controller = SRouterManager.initNibController("User.UserInfoViewControlle
 
 #### Not Found(404)
 
-##### Register 404 hander
-you can register one default hander for 404
+##### Registered 404 hander
+you can registered one default hander for 404
 
 ```swift
-SRouterManager.default.registerDefultNotFoundHandler { router in
+SRouterManager.default.registeredDefultNotFoundHandler { router in
     print("\(router) Error: 404")
 }
 ```
