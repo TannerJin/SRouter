@@ -64,8 +64,7 @@ if let controller = SRouterManager.initNibController("User.UserInfoViewControlle
 
 #### Not Found(404)
 
-##### Registered 404 hander
-you can registered one default hander for 404
+Registered Default Hander for 404
 
 ```swift
 SRouterManager.default.registeredDefultNotFoundHandler { router in
@@ -73,14 +72,14 @@ SRouterManager.default.registeredDefultNotFoundHandler { router in
 }
 ```
 
-##### Use 404 Hander
+Use Default Hander
 
-use registered hander
 ```swift
 SRouterManager.default.routeAndHandleNotFound("Login://404-Test")
 ```
 
-use yourself hander
+Use Yourself Hander
+
 ```swift
 SRouterManager.default.routeAndHandleNotFound("Login://404-Test") {
     print("Login://404-Test Router is not found")            
