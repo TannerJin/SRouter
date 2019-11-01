@@ -29,7 +29,7 @@ public extension SRouterManager {
     }
     
     func routeTo<T>(_ router: String, routerSILFunctionType functionType: T.Type) -> T? {
-        assert(MemoryLayout<T>.size == MemoryLayout<UnsafeRawPointer>.size, "T.Type is not @convention(thin) Function")
+        assert(MemoryLayout<T>.size == MemoryLayout<UnsafeRawPointer>.size, "\(T.self) is not @convention(thin) Function Type")
         
         if !isFunction(functionType) {
             SRouterLog(router: router, message: "\(functionType) Is Not FunctionType")
