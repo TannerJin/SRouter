@@ -39,10 +39,9 @@ SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "ç
 
 1. init()
 
-Any Modules
-
 ```swift
 // router to OtherViewController of User Module
+
 if let controller = SRouterManager.initController("User.OtherViewController") {
     self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 }
@@ -50,11 +49,50 @@ if let controller = SRouterManager.initController("User.OtherViewController") {
 
 2. init(nibName:bundle:)
 
-Any Modules
-
 ```swift
-// router to OtherViewController of User Module
+// router to UserInfoViewController of User Module
+
 if let controller = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
     self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 }
 ```
+
+### Error Hander
+
+#### Not Found(404)
+
+##### Register 404 hander
+you can register one default hander for 404
+
+```swift
+SRouterManager.default.registerDefultNotFoundHandler { router in
+    print("\(router) Error: 404")
+}
+```
+
+##### Use 404 Hander
+
+use registered hander
+```swift
+SRouterManager.default.routeAndHandleNotFound("Login://404-Test")
+```
+
+use yourself hander
+```swift
+SRouterManager.default.routeAndHandleNotFound("Login://404-Test") {
+    print("Login://404-Test Router is not found")            
+}
+```
+
+
+### Log
+
+```swift
+// open
+SRouterManager.openLog()
+ 
+// close
+SRouterManager.closeLog()
+```
+
+
