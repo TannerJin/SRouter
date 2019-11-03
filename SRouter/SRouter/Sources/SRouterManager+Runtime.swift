@@ -51,3 +51,48 @@ public extension SRouterManager {
         return nil
     }
 }
+
+
+
+// MARK: UIViewController
+
+public extension SRouterManager {
+    
+    // Returns the router controller
+    @discardableResult
+    static func presentRouter(_ router: String, by controller: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) -> UIViewController? {
+        if let routerController = SRouterManager.initController(router) {
+            controller.present(routerController, animated: flag, completion: completion)
+            return routerController
+        }
+        return nil
+    }
+    
+    @discardableResult
+    static func presentNibRouter(_ router: String, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, by controller: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) -> UIViewController? {
+        if let routerController = SRouterManager.initNibController(router, nibName: nibNameOrNil, bundle: nibBundleOrNil) {
+            controller.present(routerController, animated: flag, completion: completion)
+            return routerController
+        }
+        return nil
+    }
+    
+    // Returns the router controller
+    @discardableResult
+    static func pushRouter(_ router: String, by navigationController: UINavigationController?, animated flag: Bool) -> UIViewController? {
+        if let routerController = SRouterManager.initController(router) {
+            navigationController?.pushViewController(routerController, animated: flag)
+            return routerController
+        }
+        return nil
+    }
+    
+    @discardableResult
+    static func pushNibRouter(_ router: String, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, by navigationController: UINavigationController?, animated flag: Bool) -> UIViewController? {
+        if let routerController = SRouterManager.initNibController(router, nibName: nibNameOrNil, bundle: nibBundleOrNil) {
+            navigationController?.pushViewController(routerController, animated: flag)
+            return routerController
+        }
+        return nil
+    }
+}

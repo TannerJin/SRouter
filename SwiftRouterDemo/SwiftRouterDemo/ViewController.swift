@@ -39,13 +39,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func UserInfoDidClick(_ sender: UIButton) {
-//        if let controller = SRouterManager.initController("User.UserInfoViewController") {
-//            self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+//        if let userInfoController = SRouterManager.initController("User.UserInfoViewController") {
+//            self.present(UINavigationController(rootViewController: userInfoController), animated: true, completion: nil)
 //        }
         
-        if let controller2 = SRouterManager.initNibController("User.OtherViewController", nibName: nil, bundle: nil) {
-            self.present(UINavigationController(rootViewController: controller2), animated: true, completion: nil)
-        }
+        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        SRouterManager.pushRouter("User.OtherViewController", by: self.navigationController, animated: true)
     }
-    
 }

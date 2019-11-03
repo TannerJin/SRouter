@@ -48,6 +48,11 @@ Otherwise, you can use **[Route To Function](#route-to-function)** to init ViewC
 if let controller = SRouterManager.initController("User.OtherViewController") {
     self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
 }
+
+or
+
+SRouterManager.presentRouter("User.UserInfoViewController", by: self, animated: true)
+
 ```
 
 2. init(nibName:bundle:)
@@ -56,8 +61,13 @@ if let controller = SRouterManager.initController("User.OtherViewController") {
 // router to UserInfoViewController of User Module
 
 if let controller = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
-    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+    self.navigationController?.pushViewController(controller, animated: true)
 }
+
+OR
+
+SRouterManager.pushNibRouter("User.OtherViewController", nibName: nil, bundle: nil, by: self.navigationController, animated: true)
+
 ```
 
 ### Error Hander
