@@ -51,7 +51,7 @@ if let controller = SRouterManager.initController("User.OtherViewController") {
 
 or
 
-SRouterManager.presentRouter("User.UserInfoViewController", by: self, animated: true)
+SRouterManager.presentRouter("User.OtherViewController", by: self, animated: true)
 
 ```
 
@@ -66,7 +66,7 @@ if let controller = SRouterManager.initNibController("User.UserInfoViewControlle
 
 OR
 
-SRouterManager.pushNibRouter("User.OtherViewController", nibName: nil, bundle: nil, by: self.navigationController, animated: true)
+SRouterManager.pushNibRouter("User.UserInfoViewController", nibName: nil, bundle: nil, by: self.navigationController, animated: true)
 
 ```
 
