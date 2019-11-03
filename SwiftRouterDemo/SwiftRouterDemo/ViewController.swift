@@ -43,7 +43,6 @@ class ViewController: UIViewController {
 //            self.present(UINavigationController(rootViewController: userInfoController), animated: true, completion: nil)
 //        }
         
-        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         SRouterManager.pushRouter("User.OtherViewController", by: self.navigationController, animated: true)
     }
 }
