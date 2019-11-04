@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double LoginVersionNumber;
 FOUNDATION_EXPORT const unsigned char LoginVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Login/PublicHeader.h>
-
-

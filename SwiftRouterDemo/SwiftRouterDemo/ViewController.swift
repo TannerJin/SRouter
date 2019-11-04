@@ -8,6 +8,7 @@
 
 import SRouter
 import UIKit
+import Login
 
 class ViewController: UIViewController {
 
@@ -22,12 +23,12 @@ class ViewController: UIViewController {
             print("\(router) Error: 404")
         }
         
-        SRouterManager.default.routeAndHandleNotFound("Login://404-Test")
+        SRouterManager.default.routeAndHandleNotFound("Login://404-Test")                
     }
 
     @IBAction func LoginClick(_ sender: UIButton) {
         guard let naviController = self.navigationController else { return }
-        SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录 🚀🚀🚀")
+        SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录 🚀🚀🚀")        
     }
     
     @IBAction func RegisterClick(_ sender: UIButton) {
@@ -39,10 +40,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func UserInfoDidClick(_ sender: UIButton) {
-//        if let userInfoController = SRouterManager.initController("User.UserInfoViewController") {
-//            self.present(UINavigationController(rootViewController: userInfoController), animated: true, completion: nil)
-//        }
+        if let userInfoController = SRouterManager.initController("User.UserInfoViewController") {
+            self.present(UINavigationController(rootViewController: userInfoController), animated: true, completion: nil)
+        }
         
-        SRouterManager.pushRouter("User.OtherViewController", by: self.navigationController, animated: true)
+//        SRouterManager.pushRouter("User.OtherViewController", by: self.navigationController, animated: true)
     }
 }

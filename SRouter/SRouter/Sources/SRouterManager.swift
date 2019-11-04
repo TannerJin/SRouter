@@ -11,9 +11,9 @@ import Foundation
 open class SRouterManager {
     public static let `default` = SRouterManager()
 
-    private var lock = SRouterLock()
-    private var cacheSymbols = [String: UnsafeRawPointer]()
-    private var defaultNotFoundHandler: ((_ router: String)->())?
+    internal var lock = SRouterLock()
+    internal var cacheSymbols = [String: UnsafeRawPointer]()
+    internal var defaultNotFoundHandler: ((_ router: String)->())?
 }
 
 public extension SRouterManager {

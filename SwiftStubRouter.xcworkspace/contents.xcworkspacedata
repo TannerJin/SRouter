@@ -8,6 +8,9 @@
       location = "group:Base/Base.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:OCModule/OCModule.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Login/Login.xcodeproj">
    </FileRef>
    <FileRef

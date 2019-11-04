@@ -17,6 +17,8 @@
 		A92AA6CC236BDD26004B9ECD /* SRouterLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C5236BDD26004B9ECD /* SRouterLog.swift */; };
 		A92AA6CD236BDD26004B9ECD /* SRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C6236BDD26004B9ECD /* SRouterManager.swift */; };
 		A92AA6CE236BDD26004B9ECD /* SRouterLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C7236BDD26004B9ECD /* SRouterLookup.swift */; };
+		A96FE68D236FFBBD0020721C /* SRouterManager+OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE68C236FFBBD0020721C /* SRouterManager+OC.swift */; };
+		A96FE68F236FFC900020721C /* SRouterFunction+OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE68E236FFC900020721C /* SRouterFunction+OC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		A92AA6C5236BDD26004B9ECD /* SRouterLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterLog.swift; sourceTree = "<group>"; };
 		A92AA6C6236BDD26004B9ECD /* SRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterManager.swift; sourceTree = "<group>"; };
 		A92AA6C7236BDD26004B9ECD /* SRouterLookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterLookup.swift; sourceTree = "<group>"; };
+		A96FE68C236FFBBD0020721C /* SRouterManager+OC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterManager+OC.swift"; sourceTree = "<group>"; };
+		A96FE68E236FFC900020721C /* SRouterFunction+OC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterFunction+OC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,18 @@
 				A92AA6C3236BDD26004B9ECD /* SRouterLock.swift */,
 				A92AA6C5236BDD26004B9ECD /* SRouterLog.swift */,
 				A92AA6C1236BDD26004B9ECD /* SRouterManager+Runtime.swift */,
+				A96FE68B236FFB980020721C /* SRouter+OC */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A96FE68B236FFB980020721C /* SRouter+OC */ = {
+			isa = PBXGroup;
+			children = (
+				A96FE68C236FFBBD0020721C /* SRouterManager+OC.swift */,
+				A96FE68E236FFC900020721C /* SRouterFunction+OC.swift */,
+			);
+			path = "SRouter+OC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96FE68F236FFC900020721C /* SRouterFunction+OC.swift in Sources */,
 				A92AA6CA236BDD26004B9ECD /* SRouterLock.swift in Sources */,
 				A92AA6CB236BDD26004B9ECD /* SRouterSILFunction.swift in Sources */,
 				A92AA6CC236BDD26004B9ECD /* SRouterLog.swift in Sources */,
 				A92AA6CE236BDD26004B9ECD /* SRouterLookup.swift in Sources */,
 				A92AA6C9236BDD26004B9ECD /* SRouterHelper.swift in Sources */,
 				A92AA6CD236BDD26004B9ECD /* SRouterManager.swift in Sources */,
+				A96FE68D236FFBBD0020721C /* SRouterManager+OC.swift in Sources */,
 				A92AA6C8236BDD26004B9ECD /* SRouterManager+Runtime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
