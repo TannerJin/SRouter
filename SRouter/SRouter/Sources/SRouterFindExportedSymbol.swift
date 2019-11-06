@@ -9,21 +9,21 @@
 import Foundation
 import MachO
 
-func SRouteLookupSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
+func SRouteFindSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeRawPointer? {
     for i in 0..<_dyld_image_count() {
         if String(cString: _dyld_get_image_name(i)).components(separatedBy: "/").last == moduleName {
-            if let pointer = SRouteLookupSymbolAtExportInfo(symbol, imageIndex: i) {
+            if let pointer = SRouteFindSymbolAtExportedSymbol(symbol, imageIndex: i) {
                 return pointer
             }
-            return SRouteLookupSymbolAtSymbolTable(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
+            return SRouteFindSymbolAtSymbolTable(symbol, image: _dyld_get_image_header(i), imageSlide: _dyld_get_image_vmaddr_slide(i))
         }
     }
     SRouterLog(router: symbol, message: "\(moduleName) Module Not Found")
     return nil
 }
 
-// O(log(n)) B Tree
-private func SRouteLookupSymbolAtExportInfo(_ symbol: String, imageIndex: UInt32) -> UnsafeRawPointer? {
+// O(log(n)) Tree
+private func SRouteFindSymbolAtExportedSymbol(_ symbol: String, imageIndex: UInt32) -> UnsafeRawPointer? {
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
         return UnsafeRawPointer(pointer)
     }
@@ -32,7 +32,7 @@ private func SRouteLookupSymbolAtExportInfo(_ symbol: String, imageIndex: UInt32
 }
 
 // O(n)  list
-func SRouteLookupSymbolAtSymbolTable(_ symbol: String, image: UnsafePointer<mach_header>, imageSlide slide: Int) -> UnsafeRawPointer? {
+func SRouteFindSymbolAtSymbolTable(_ symbol: String, image: UnsafePointer<mach_header>, imageSlide slide: Int) -> UnsafeRawPointer? {
     let linkeditName = SEG_LINKEDIT.data(using: String.Encoding.utf8)!.map({ $0 })
     var linkeditCmd: UnsafeMutablePointer<segment_command_64>!
     var symtabCmd: UnsafeMutablePointer<symtab_command>!

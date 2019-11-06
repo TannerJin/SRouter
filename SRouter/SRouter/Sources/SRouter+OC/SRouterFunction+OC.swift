@@ -10,6 +10,7 @@ import Foundation
 
 @dynamicCallable
 public struct SRouterDefaultOCFunction {
+    // OBJC_EXPORT => extern c
     public typealias SRouterOCFunction = @convention(c) (_ input: NSDictionary) -> NSDictionary?
         
     internal var function: SRouterOCFunction

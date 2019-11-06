@@ -16,7 +16,7 @@
 		A92AA6CB236BDD26004B9ECD /* SRouterSILFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C4236BDD26004B9ECD /* SRouterSILFunction.swift */; };
 		A92AA6CC236BDD26004B9ECD /* SRouterLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C5236BDD26004B9ECD /* SRouterLog.swift */; };
 		A92AA6CD236BDD26004B9ECD /* SRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C6236BDD26004B9ECD /* SRouterManager.swift */; };
-		A92AA6CE236BDD26004B9ECD /* SRouterLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C7236BDD26004B9ECD /* SRouterLookup.swift */; };
+		A92AA6CE236BDD26004B9ECD /* SRouterFindExportedSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92AA6C7236BDD26004B9ECD /* SRouterFindExportedSymbol.swift */; };
 		A96FE68D236FFBBD0020721C /* SRouterManager+OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE68C236FFBBD0020721C /* SRouterManager+OC.swift */; };
 		A96FE68F236FFC900020721C /* SRouterFunction+OC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE68E236FFC900020721C /* SRouterFunction+OC.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,7 @@
 		A92AA6C4236BDD26004B9ECD /* SRouterSILFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterSILFunction.swift; sourceTree = "<group>"; };
 		A92AA6C5236BDD26004B9ECD /* SRouterLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterLog.swift; sourceTree = "<group>"; };
 		A92AA6C6236BDD26004B9ECD /* SRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterManager.swift; sourceTree = "<group>"; };
-		A92AA6C7236BDD26004B9ECD /* SRouterLookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterLookup.swift; sourceTree = "<group>"; };
+		A92AA6C7236BDD26004B9ECD /* SRouterFindExportedSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRouterFindExportedSymbol.swift; sourceTree = "<group>"; };
 		A96FE68C236FFBBD0020721C /* SRouterManager+OC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterManager+OC.swift"; sourceTree = "<group>"; };
 		A96FE68E236FFC900020721C /* SRouterFunction+OC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SRouterFunction+OC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A92AA6C6236BDD26004B9ECD /* SRouterManager.swift */,
-				A92AA6C7236BDD26004B9ECD /* SRouterLookup.swift */,
+				A92AA6C7236BDD26004B9ECD /* SRouterFindExportedSymbol.swift */,
 				A92AA6C4236BDD26004B9ECD /* SRouterSILFunction.swift */,
 				A92AA6C2236BDD26004B9ECD /* SRouterHelper.swift */,
 				A92AA6C3236BDD26004B9ECD /* SRouterLock.swift */,
@@ -242,7 +242,7 @@
 				A92AA6CA236BDD26004B9ECD /* SRouterLock.swift in Sources */,
 				A92AA6CB236BDD26004B9ECD /* SRouterSILFunction.swift in Sources */,
 				A92AA6CC236BDD26004B9ECD /* SRouterLog.swift in Sources */,
-				A92AA6CE236BDD26004B9ECD /* SRouterLookup.swift in Sources */,
+				A92AA6CE236BDD26004B9ECD /* SRouterFindExportedSymbol.swift in Sources */,
 				A92AA6C9236BDD26004B9ECD /* SRouterHelper.swift in Sources */,
 				A92AA6CD236BDD26004B9ECD /* SRouterManager.swift in Sources */,
 				A96FE68D236FFBBD0020721C /* SRouterManager+OC.swift in Sources */,

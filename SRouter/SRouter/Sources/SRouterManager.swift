@@ -47,7 +47,7 @@ public extension SRouterManager {
         }
         
         guard let module = router.components(separatedBy: "://").first,
-            let routerSymbol = SRouteLookupSymbolAtModule(module, symbol: router) else { return nil }
+            let routerSymbol = SRouteFindSymbolAtModule(module, symbol: router) else { return nil }
         
         cacheSymbols[router] = routerSymbol
         let routerFunction = unsafeBitCast(routerSymbol, to: T.self)

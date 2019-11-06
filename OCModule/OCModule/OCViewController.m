@@ -23,7 +23,7 @@
 
 @end
 
-//__attribute__((visibility("default")))
+// extern C and __attribute__((visibility("default")))
 OBJC_EXPORT NSDictionary* OCControllerInterface(NSDictionary* params) {
     UINavigationController *naviController = params[@"navi"];
     OCViewController *oc_controller = [[OCViewController alloc] init];
