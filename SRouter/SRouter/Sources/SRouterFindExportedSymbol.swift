@@ -42,15 +42,15 @@ func SRouteFindSymbolAtSymbolTable(_ symbol: String, image: UnsafePointer<mach_h
     
     for _ in 0..<image.pointee.ncmds {
         if _cur_cmd.pointee.cmd == LC_SEGMENT_64 {
-            if  _cur_cmd.pointee.segname.0 == linkeditName[0],
-                _cur_cmd.pointee.segname.1 == linkeditName[1],
-                _cur_cmd.pointee.segname.2 == linkeditName[2],
-                _cur_cmd.pointee.segname.3 == linkeditName[3],
-                _cur_cmd.pointee.segname.4 == linkeditName[4],
-                _cur_cmd.pointee.segname.5 == linkeditName[5],
-                _cur_cmd.pointee.segname.6 == linkeditName[6],
-                _cur_cmd.pointee.segname.7 == linkeditName[7],
-                _cur_cmd.pointee.segname.8 == linkeditName[8],
+            if  _cur_cmd.pointee.segname.0 == linkeditName[0] &&
+                _cur_cmd.pointee.segname.1 == linkeditName[1] &&
+                _cur_cmd.pointee.segname.2 == linkeditName[2] &&
+                _cur_cmd.pointee.segname.3 == linkeditName[3] &&
+                _cur_cmd.pointee.segname.4 == linkeditName[4] &&
+                _cur_cmd.pointee.segname.5 == linkeditName[5] &&
+                _cur_cmd.pointee.segname.6 == linkeditName[6] &&
+                _cur_cmd.pointee.segname.7 == linkeditName[7] &&
+                _cur_cmd.pointee.segname.8 == linkeditName[8] &&
                 _cur_cmd.pointee.segname.9 == linkeditName[9]
             {
                 linkeditCmd = _cur_cmd
