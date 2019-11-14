@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SRouterSpinLock {
+class SpinLock {
     private var _lock = os_unfair_lock_s()
 
     func lock() {
@@ -20,21 +20,24 @@ class SRouterSpinLock {
     }
 }
 
-class SRouterLock {
+class SRouterSpinLock {
     private var lock_value: Int32 = 0
     
     func lock() {
         // 单核：停止多线程调度(关中断)
-        // 多核：1.锁住总线 2.锁住缓存的lock_value行
+        // 多核：1.锁住总线 or 2.锁住缓存中的lock_value行
         while !OSAtomicCompareAndSwap32(0, 1, &lock_value) {
-            // QOS_CLASS_BACKGROUND        : 9
-            // QOS_CLASS_UTILITY           : 17
-            // QOS_CLASS_DEFAULT           : 21
-            // QOS_CLASS_USER_INITIATED    : 25
-            // QOS_CLASS_USER_INTERACTIVE  : 33
-            if qos_class_self().rawValue <= QOS_CLASS_BACKGROUND.rawValue {
-                pthread_set_qos_class_self_np(QOS_CLASS_UTILITY, 0)
-            }
+            
+        }
+        
+        // QOS_CLASS_BACKGROUND        : 9
+        // QOS_CLASS_UTILITY           : 17
+        // QOS_CLASS_DEFAULT           : 21
+        // QOS_CLASS_USER_INITIATED    : 25
+        // QOS_CLASS_USER_INTERACTIVE  : 33
+        // 优先级翻转问题；最后在unlock的时候，恢复线程优先级；可以通过pthread_setspecific存储和设置
+        if qos_class_self().rawValue <= QOS_CLASS_BACKGROUND.rawValue {
+            pthread_set_qos_class_self_np(QOS_CLASS_UTILITY, 0)
         }
     }
     
