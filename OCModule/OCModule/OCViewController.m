@@ -25,7 +25,7 @@
 
 // extern C and __attribute__((visibility("default")))
 OBJC_EXPORT NSDictionary* OCControllerInterface(NSDictionary* params) {
-    UINavigationController *naviController = params[@"navi"];
+    UINavigationController *naviController = params[@"loginModuleNavi"];
     OCViewController *oc_controller = [[OCViewController alloc] init];
     [naviController pushViewController:oc_controller animated:true];
     return nil;

@@ -26,6 +26,6 @@ public class LoginViewController: UIViewController {
     }
     
     @objc func RouteToOC() {
-        SRouterManager.default.ocRouteTo("OCModule://OCControllerInterface")?(navi: navigationController as Any)
+        SRouterManager.default.ocRouteTo("OCModule://OCControllerInterface")?(loginModuleNavi: navigationController as Any)
     }
 }
