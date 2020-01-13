@@ -1,8 +1,6 @@
 # [SRouter](https://tannerjin.github.io/2019/11/04/SRouter/)
 An iOS(Swift) Router to resolve references between modules and don't need registered router
 
-SwiftRouter?  StubRouter?  SymbolRouter?  SILRouter?  Whatever, Just call SRouter.
-
 
 ## Usage
 
