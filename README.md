@@ -32,40 +32,28 @@ Any Others Module
 SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
 
-### Route To UIViewController
+###  Another Case
 
-Please make sure your ViewController hasn't yourself init method    
-
-Otherwise, you can use **[Route To Function](#route-to-function)** to init ViewController
-
-1. init()
+Register Module
 
 ```swift
-// router to OtherViewController of User Module
-
-if let controller = SRouterManager.initController("User.OtherViewController") {
-    self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+// define Interface
+@_silgen_name("Login://registered")
+public func RegisteredRouterInterface(with param: String) -> UIViewController {
+    let registeredController = RegisteredViewController(title: "Registered 🚀🚀🚀")
+    registeredController._title = param
+    return registeredController
 }
-
-or
-
-SRouterManager.presentRouter("User.OtherViewController", by: self, animated: true)
-
 ```
 
-2. init(nibName:bundle:)
+Any Others Module
 
 ```swift
-// router to UserInfoViewController of User Module
-
-if let controller = SRouterManager.initNibController("User.UserInfoViewController", nibName: nil, bundle: nil) {
-    self.navigationController?.pushViewController(controller, animated: true)
+typealias RegisteredRouterSILFunctionType = @convention(thin) (_ input: String) -> UIViewController
+        
+if let registeredController = SRouterManager.default.routeTo("Login://registered", routerSILFunctionType: RegisteredRouterSILFunctionType.self)?("注册 🚀🚀🚀") {
+     self.present(UINavigationController(rootViewController: registeredController), animated: true, completion: nil)
 }
-
-OR
-
-SRouterManager.pushNibRouter("User.UserInfoViewController", nibName: nil, bundle: nil, by: self.navigationController, animated: true)
-
 ```
 
 ### Error Hander
