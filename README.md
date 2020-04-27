@@ -5,12 +5,12 @@ An iOS(Swift) Router to resolve references between modules and don't need regist
 
 ## Usage
 
-### Route To Function
+* 
 
 Login Module
 ```swift
 // define login router
-@_silgen_name("Login://login")
+@_silgen_name("Login.login")
 public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
     guard let navi = params["navi"] as? UINavigationController else {
        return nil
@@ -30,30 +30,25 @@ Any Others Module
 
 ```swift
 // router to login of Login Module
-SRouterManager.default.routeTo("Login://login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
+SRouterManager.default.routeTo("Login.login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
 
-###  Another Case
+*
 
-Register Module
+Login Module
 
 ```swift
 // define Interface
-@_silgen_name("Login://registered")
-public func RegisteredRouterInterface(with param: String) -> UIViewController {
-    let registeredController = RegisteredViewController(title: "Registered 🚀🚀🚀")
-    registeredController._title = param
-    return registeredController
+public func LoginActionTest(a: Int, b: UIViewController) {
+    print("Hello, LoginActionTest; inputValue =", a, b)
 }
 ```
 
 Any Others Module
 
 ```swift
-typealias RegisteredRouterSILFunctionType = @convention(thin) (_ input: String) -> UIViewController
-        
-if let registeredController = SRouterManager.default.routeTo("Login://registered", routerSILFunctionType: RegisteredRouterSILFunctionType.self)?("注册 🚀🚀🚀") {
-     self.present(UINavigationController(rootViewController: registeredController), animated: true, completion: nil)
+if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, AnyObject)->()).self) {
+     action(996, self)
 }
 ```
 
