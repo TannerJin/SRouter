@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             action6(6, CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
         }
 
-        if let action7 = SRouterManager.default.routeTo("Login.LoginActionTest7(a: Swift.Int, b: __C.UIViewController) -> ()", routerSILFunctionType: (@convention(thin) (Int, AnyObject)->()).self) {
+        if let action7 = SRouterManager.default.routeTo("Login.LoginActionTest7(a: Swift.Int, b: __C.UIViewController) -> ()", routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
             action7(7, self)
         }
         

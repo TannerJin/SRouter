@@ -47,7 +47,7 @@ public func LoginActionTest(a: Int, b: UIViewController) {
 Any Others Module
 
 ```swift
-if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, AnyObject)->()).self) {
+if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
      action(996, self)
 }
 ```
