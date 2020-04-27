@@ -38,7 +38,7 @@ SRouterManager.default.routeTo("Login.login")?(navi: naviController, title: "登
 Login Module
 
 ```swift
-// define Interface
+// define action
 public func LoginActionTest(a: Int, b: UIViewController) {
     print("Hello, LoginActionTest; inputValue =", a, b)
 }
