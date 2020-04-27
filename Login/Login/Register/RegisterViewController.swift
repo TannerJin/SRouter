@@ -6,7 +6,6 @@
 //  Copyright © 2019 jintao. All rights reserved.
 //
 
-import Base
 import UIKit
 
 class RegisteredViewController: UIViewController {

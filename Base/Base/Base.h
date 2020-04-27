@@ -2,8 +2,8 @@
 //  Base.h
 //  Base
 //
-//  Created by jintao on 2019/10/23.
-//  Copyright © 2019 jintao. All rights reserved.
+//  Created by jintao on 2020/4/27.
+//  Copyright © 2020 jintao. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

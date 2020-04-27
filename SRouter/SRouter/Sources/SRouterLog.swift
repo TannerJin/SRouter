@@ -8,12 +8,11 @@
 
 import Foundation
 
-public var SRouterLogOn = false
+internal var SRouterLogOn = false
 
-@inlinable
-func SRouterLog(router: String, message: String) {
+internal func SRouterLog(router: String, message: String) {
     if SRouterLogOn {
-        let logMsg = "[** SRouter **] route to '\(router)' error =>: " + message
+        let logMsg = "[** SRouter **] route to '\(router)' Error =>: " + message
         print(logMsg, "\n")
     }
 }

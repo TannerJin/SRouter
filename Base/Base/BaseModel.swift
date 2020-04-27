@@ -2,12 +2,16 @@
 //  BaseModel.swift
 //  Base
 //
-//  Created by jintao on 2019/10/31.
-//  Copyright © 2019 jintao. All rights reserved.
+//  Created by jintao on 2020/4/27.
+//  Copyright © 2020 jintao. All rights reserved.
 //
 
 import Foundation
 
-public struct BaseModel {
-    var id = 666    
+public class BaseModel {
+    public var name: String
+    
+    public init(_name: String) {
+        name = _name
+    }
 }

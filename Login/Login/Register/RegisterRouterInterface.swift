@@ -8,8 +8,8 @@
 
 import UIKit
 
-@_silgen_name("Login://registered")
+@_silgen_name("Login.registered")
 public func RegisteredRouterInterface(with param: String) -> UIViewController {
-    let registeredController = RegisteredViewController(title: "Registered 🚀🚀🚀")
+    let registeredController = RegisteredViewController(title: "\(param) 🚀🚀🚀")
     return registeredController
 }

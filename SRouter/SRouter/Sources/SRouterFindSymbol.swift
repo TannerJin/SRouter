@@ -27,7 +27,7 @@ private func SRouteFindSymbolAtExportedSymbol(_ symbol: String, imageIndex: UInt
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
         return UnsafeRawPointer(pointer)
     }
-    SRouterLog(router: symbol, message: "ExportInfo Not Found \(symbol)")
+//    SRouterLog(router: symbol, message: "ExportInfo Not Found \(symbol)")
     return nil
 }
 
@@ -76,12 +76,27 @@ func SRouteFindSymbolAtSymbolTable(_ symbol: String, image: UnsafePointer<mach_h
     for i in 0..<symtabCmd.pointee.nsyms {
         let curSymbol = symtab.advanced(by: Int(i))
         let curSymbolStrOff = curSymbol.pointee.n_un.n_strx
-        
         let curSymbolStr = strtab.advanced(by: Int(curSymbolStrOff))
-        let _curSymbolStr = String(cString: curSymbolStr.advanced(by: 1))  // _symbol
         
-        if _curSymbolStr == symbol {
+        let cSymbol = String(cString: curSymbolStr.advanced(by: 1))  // _symbol
+        let swiftSymbol = swift_demangle(cSymbol)
+                
+        if cSymbol == symbol || swiftSymbol == symbol,
+            (Int32(curSymbol.pointee.n_type) & N_TYPE) == N_SECT && (Int32(curSymbol.pointee.n_type) & N_STAB == 0) {  // dyld
+            
             return UnsafeRawPointer(bitPattern: slide + Int(curSymbol.pointee.n_value))
+        }
+        
+        // debug symbol
+        if SRouterLogOn, ![cSymbol, swiftSymbol].contains(symbol) {
+            let name = symbol.components(separatedBy: "(").first
+            let cName = cSymbol.components(separatedBy: "(").first
+            let swiftName = swiftSymbol?.components(separatedBy: "(").first
+            
+            if name == cName || name == swiftName {
+                let symbolLog = "c_symbol = \(cSymbol), swift_symbol = \(swiftSymbol ?? "nil")"
+                SRouterLog(router: symbol, message: symbolLog)
+            }
         }
     }
     

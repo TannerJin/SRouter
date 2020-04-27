@@ -46,7 +46,7 @@ public extension SRouterManager {
             return routerFunction
         }
         
-        guard let module = router.components(separatedBy: "://").first,
+        guard let module = router.components(separatedBy: ".").first,
             let routerSymbol = SRouteFindSymbolAtModule(module, symbol: router) else { return nil }
         
         cacheSymbols[router] = routerSymbol

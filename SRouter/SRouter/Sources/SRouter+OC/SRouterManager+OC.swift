@@ -33,8 +33,8 @@ public extension SRouterManager {
             return routerFunction
         }
         
-        guard let module = router.components(separatedBy: "://").first,
-            let symbol = router.components(separatedBy: "://").last,
+        guard let module = router.components(separatedBy: ".").first,
+            let symbol = router.components(separatedBy: ".").last,
             let routerSymbol = SRouteFindSymbolAtModule(module, symbol: symbol) else { return nil }
         
         cacheSymbols[router] = routerSymbol

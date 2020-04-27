@@ -14,9 +14,6 @@
       location = "group:Login/Login.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:User/User.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:SwiftRouterDemo/SwiftRouterDemo.xcodeproj">
    </FileRef>
 </Workspace>

@@ -14,10 +14,10 @@
 		A9371F7423602F6000045DCD /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9371F6A23602F6000045DCD /* Login.framework */; };
 		A9371F7923602F6000045DCD /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9371F7823602F6000045DCD /* LoginTests.swift */; };
 		A9371F7B23602F6000045DCD /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = A9371F6D23602F6000045DCD /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A939FEB5236AC95E004DF950 /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEB4236AC95E004DF950 /* Base.framework */; };
-		A939FEB6236AC95E004DF950 /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A939FEB4236AC95E004DF950 /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A96FE691237001930020721C /* SRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96FE690237001930020721C /* SRouter.framework */; };
 		A96FE692237001930020721C /* SRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96FE690237001930020721C /* SRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9EEF9292456DC88000695DC /* Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EEF9282456DC88000695DC /* Base.framework */; };
+		A9EEF92A2456DC88000695DC /* Base.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9EEF9282456DC88000695DC /* Base.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A939FEB6236AC95E004DF950 /* Base.framework in Embed Frameworks */,
 				A96FE692237001930020721C /* SRouter.framework in Embed Frameworks */,
+				A9EEF92A2456DC88000695DC /* Base.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +59,7 @@
 		A939FEB4236AC95E004DF950 /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96FE690237001930020721C /* SRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96FE695237010380020721C /* OCModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OCModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9EEF9282456DC88000695DC /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A939FEB5236AC95E004DF950 /* Base.framework in Frameworks */,
 				A96FE691237001930020721C /* SRouter.framework in Frameworks */,
+				A9EEF9292456DC88000695DC /* Base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +143,7 @@
 		A939FEB3236AC95E004DF950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9EEF9282456DC88000695DC /* Base.framework */,
 				A96FE695237010380020721C /* OCModule.framework */,
 				A96FE690237001930020721C /* SRouter.framework */,
 				A939FEB4236AC95E004DF950 /* Base.framework */,

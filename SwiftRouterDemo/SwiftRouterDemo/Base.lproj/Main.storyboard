@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3cA-6U-l2J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,21 +35,25 @@
                                     <action selector="RegisterClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aa8-7I-99V"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-Gb-fok">
-                                <rect key="frame" x="186.5" y="517" width="41" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOp-IF-RtT">
+                                <rect key="frame" x="178" y="525" width="58" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="1Az-fV-gG3"/>
+                                    <constraint firstAttribute="height" constant="33" id="UX2-bJ-Gz7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="用户"/>
+                                <state key="normal" title="Action"/>
                                 <connections>
-                                    <action selector="UserInfoDidClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPz-b6-TFK"/>
+                                    <action selector="actionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zER-I4-XX4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Il1-Gb-fok" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="60" id="6Tz-M5-FyZ"/>
+                            <constraint firstItem="vOp-IF-RtT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4kI-L8-CHU"/>
                             <constraint firstItem="QWh-eG-BU9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ANq-6Y-Pt8"/>
-                            <constraint firstItem="Il1-Gb-fok" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F5n-B7-AWp"/>
                             <constraint firstItem="Fag-Fd-c5s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NdL-AX-9Nk"/>
+                            <constraint firstItem="vOp-IF-RtT" firstAttribute="top" secondItem="QWh-eG-BU9" secondAttribute="bottom" constant="32" id="XOJ-nx-grj"/>
                             <constraint firstItem="Fag-Fd-c5s" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-60" id="aav-28-jw1"/>
                             <constraint firstItem="QWh-eG-BU9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qXA-O9-Q4b"/>
                         </constraints>
