@@ -7,10 +7,11 @@ Base on Exported Symbol and SymbolTable
 
 ## Usage
 
-* 
+1. 
 
-Login Module
 ```swift
+Login Module
+
 // define login router
 @_silgen_name("Login.login")
 public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
@@ -26,29 +27,24 @@ public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
     return nil
 }
 
-```
-
 Any Others Module
 
-```swift
 // router to login of Login Module
 SRouterManager.default.routeTo("Login.login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
 
-*
-
-Login Module
+2. 
 
 ```swift
+Login Module
+
 // define action
 public func LoginActionTest(a: Int, b: UIViewController) {
     print("Hello, LoginActionTest; inputValue =", a, b)
 }
-```
 
 Any Others Module
 
-```swift
 if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
      action(996, self)
 }
