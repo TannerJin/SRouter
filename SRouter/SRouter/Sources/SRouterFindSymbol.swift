@@ -22,7 +22,7 @@ func SRouteFindSymbolAtModule(_ moduleName: String, symbol: String) -> UnsafeRaw
     return nil
 }
 
-// O(log(n)) Tree
+// O(_symbol.count) Tree
 private func SRouteFindSymbolAtExportedSymbol(_ symbol: String, imageIndex: UInt32) -> UnsafeRawPointer? {
     if let handle = dlopen(_dyld_get_image_name(imageIndex), RTLD_NOW), let pointer = dlsym(handle, symbol) {
         return UnsafeRawPointer(pointer)
