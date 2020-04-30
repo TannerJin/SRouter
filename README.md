@@ -69,14 +69,14 @@ SRouterManager.default.registeredDefultNotFoundHandler { router in
 Use Default Hander
 
 ```swift
-SRouterManager.default.routeAndHandleNotFound("Login://404-Test")
+SRouterManager.default.routeAndHandleNotFound("Login.404-Test")
 ```
 
 Use Yourself Hander
 
 ```swift
-SRouterManager.default.routeAndHandleNotFound("Login://404-Test") {
-    print("Login://404-Test Router is not found")            
+SRouterManager.default.routeAndHandleNotFound("Login.404-Test") {
+    print("Login.404-Test Router is not found")            
 }
 ```
 
