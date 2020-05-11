@@ -26,6 +26,7 @@ public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
 
 // MARK: - Examples
 
+@inline(never)
 public func LoginActionTest1() {
     print("Hello, LoginActionTest1;")
 }

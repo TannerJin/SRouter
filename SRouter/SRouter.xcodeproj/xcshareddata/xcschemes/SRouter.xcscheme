@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9371F6923602F6000045DCD"
-               BuildableName = "Login.framework"
-               BlueprintName = "Login"
-               ReferencedContainer = "container:Login.xcodeproj">
+               BlueprintIdentifier = "A92AA6A2236BDC81004B9ECD"
+               BuildableName = "SRouter.framework"
+               BlueprintName = "SRouter"
+               ReferencedContainer = "container:SRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9371F7223602F6000045DCD"
-               BuildableName = "LoginTests.xctest"
-               BlueprintName = "LoginTests"
-               ReferencedContainer = "container:Login.xcodeproj">
+               BlueprintIdentifier = "A92AA6AB236BDC81004B9ECD"
+               BuildableName = "SRouterTests.xctest"
+               BlueprintName = "SRouterTests"
+               ReferencedContainer = "container:SRouter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9371F6923602F6000045DCD"
-            BuildableName = "Login.framework"
-            BlueprintName = "Login"
-            ReferencedContainer = "container:Login.xcodeproj">
+            BlueprintIdentifier = "A92AA6A2236BDC81004B9ECD"
+            BuildableName = "SRouter.framework"
+            BlueprintName = "SRouter"
+            ReferencedContainer = "container:SRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
