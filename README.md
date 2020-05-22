@@ -44,7 +44,9 @@ public func loginActionTestDefault(_ params: [String: Any]) -> [String: Any]? {
 /*
     Any Others Module
 */
-SRouterManager.default.routeTo("Login.loginActionTestDefault(Swift.Dictionary<Swift.String, Any>) -> Swift.Optional<Swift.Dictionary<Swift.String, Any>>")?(param1: "fuck", param2: 996)
+let routerSymbol = "Login.loginActionTestDefault(Swift.Dictionary<Swift.String, Any>) -> Swift.Optional<Swift.Dictionary<Swift.String, Any>>"
+
+SRouterManager.default.routeTo(routerSymbol)?(param1: "fuck", param2: 996)
 
 // will print `Hello, loginActionTestDefault; ["param1": "fuck", "param2", 996]`
 ```
@@ -62,9 +64,9 @@ public func LoginActionTest(a: Int, b: UIViewController) {
 /*
     Any Others Module
 */
-
-if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
-     action(996, self)
+let routerSymbol = "Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()"
+if let action = SRouterManager.default.routeTo(routerSymbol, routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
+     action(996, UIViewController())
 }
 ```
 
