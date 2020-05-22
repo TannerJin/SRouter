@@ -10,9 +10,9 @@ Base on Exported Symbol
 1. 
 
 ```swift
-Login Module
-
-// define login router
+/*
+    Login Module
+*/
 @_silgen_name("Login.login")
 public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
     guard let navi = params["navi"] as? UINavigationController else {
@@ -27,23 +27,43 @@ public func LoginRouterInterface(with params: [String: Any]) -> [String: Any]? {
     return nil
 }
 
-Any Others Module
-
-// router to login of Login Module
+/*
+    Any Others Module
+*/
 SRouterManager.default.routeTo("Login.login")?(navi: naviController, title: "登录🚀🚀🚀", others: "Any others params...")
 ```
 
 2. 
+```swift
+/*
+   Login Module
+*/
+public func loginActionTestDefault(_ params: [String: Any]) -> [String: Any]? {
+    print("Hello, loginActionTestDefault;", params)
+    return nil
+}
+
+/*
+    Any Others Module
+*/
+SRouterManager.default.routeTo("Login.loginActionTestDefault(Swift.Dictionary<Swift.String, Any>) -> Swift.Optional<Swift.Dictionary<Swift.String, Any>>")?(param1: "fuck", param2: 996)
+
+// will print `Hello, loginActionTestDefault; ["param1": "fuck", "param2", 996]`
+```
+
+3. 
 
 ```swift
-Login Module
-
-// define action
+/*
+    Login Module
+*/
 public func LoginActionTest(a: Int, b: UIViewController) {
     print("Hello, LoginActionTest; inputValue =", a, b)
 }
 
-Any Others Module
+/*
+    Any Others Module
+*/
 
 if let action = SRouterManager.default.routeTo("Login.LoginActionTest(a: Swift.Int, b: __C.UIViewController) -> ()",   routerSILFunctionType: (@convention(thin) (Int, UIViewController)->()).self) {
      action(996, self)
