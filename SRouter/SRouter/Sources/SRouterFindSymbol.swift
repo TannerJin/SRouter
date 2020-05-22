@@ -107,6 +107,8 @@ private func SRouteFindExportedSwiftSymbol(_ swiftSymbol: String, image: UnsafeP
                 terminalSize = read_uleb128(p: &p, end: end)
             }
             if terminalSize != 0 {
+                // debug SwiftSymbol, print all exported Symbol and you can find symbolName
+                // print(swift_demangle(currentSymbol))
                 return swift_demangle(currentSymbol) == swiftSymbol ? p : nil
             }
             

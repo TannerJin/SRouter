@@ -42,7 +42,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func actionClick(_ sender: UIButton) {
-         if let action = SRouterManager.default.routeTo("Login.LoginActionTest1() -> ()", routerSILFunctionType: (@convention(thin) ()->()).self) {
+        SRouterManager.default.routeTo("Login.loginActionTestDefault(Swift.Dictionary<Swift.String, Any>) -> Swift.Optional<Swift.Dictionary<Swift.String, Any>>")?(param1: "hello", param2: 996)
+        
+        if let action = SRouterManager.default.routeTo("Login.LoginActionTest1() -> ()", routerSILFunctionType: (@convention(thin) ()->()).self) {
             action()
         }
         
