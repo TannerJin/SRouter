@@ -3,7 +3,7 @@ An iOS(Swift) Router to resolve references between modules and don't need regist
 
 Base on Exported Symbol
 
-[原理](https://tannerjin.github.io/2019/11/04/SRouter/)
+[原理(Base on Exported Symbol)](https://tannerjin.github.io/2019/11/04/SRouter/)
 
 ## Usage
 
