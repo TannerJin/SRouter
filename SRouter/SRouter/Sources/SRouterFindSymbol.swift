@@ -93,7 +93,7 @@ private func SRouteFindExportedSwiftSymbol(_ swiftSymbol: String, image: UnsafeP
         return result
     }
     
-    // trieWalk ExportedSymbol Trie (深度优先遍历)
+    // trieWalk ExportedSymbol Trie (深度先序遍历)
     
     func trieWalk(start: UnsafeMutablePointer<UInt8>, end: UnsafeMutablePointer<UInt8>, currentLocation location: UnsafeMutablePointer<UInt8>, currentSymbol: String) -> UnsafeMutablePointer<UInt8>? {
         var p = location
@@ -108,7 +108,7 @@ private func SRouteFindExportedSwiftSymbol(_ swiftSymbol: String, image: UnsafeP
             }
             if terminalSize != 0 {
                 // debug SwiftSymbol, print all exported Symbol and you can find symbolName
-                // print(swift_demangle(currentSymbol))
+//                 print(swift_demangle(currentSymbol))
                 return swift_demangle(currentSymbol) == swiftSymbol ? p : nil
             }
             
